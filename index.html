@@ -1,42 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>BAITTERS ESPORTS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="todo-app">
-            <h1>My To-Do List</h1>
-            
-            <div class="input-container">
-                <input 
-                    type="text" 
-                    id="todoInput" 
-                    placeholder="Add a new task..."
-                    autocomplete="off"
-                >
-                <button id="addBtn">Add</button>
-            </div>
 
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="active">Active</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
-            </div>
+<!-- HLAVIČKA -->
+<header class="top-header">
+  <div class="logo-box">
+    <img src="logo.png" alt="BAITTERS Logo">
+  </div>
 
-            <ul id="todoList" class="todo-list"></ul>
+  <div class="title-box">
+    <h1>BAITTERS</h1>
+    <p>CZ/SK ESPORT ORGANIZACE</p>
+  </div>
+</header>
 
-            <div class="stats">
-                <span>Total: <span id="totalCount">0</span></span>
-                <span>Completed: <span id="completedCount">0</span></span>
-                <button id="clearBtn" class="clear-btn">Clear Completed</button>
-            </div>
-        </div>
+<!-- NAVIGACE -->
+<nav class="nav">
+  <a href="#">Home</a>
+  <a href="#">O nás</a>
+  <a href="#">Náš tým</a>
+  <a href="#">Zápasy</a>
+  <a href="#">Partneři</a>
+  <a href="#">Galerie</a>
+  <a href="#">Kontakt</a>
+</nav>
+
+<!-- SEKCE NÁŠ TÝM -->
+<section class="team-section">
+  <h2>BAITTERS – Náš tým</h2>
+
+  <div class="team-grid">
+
+    <!-- 1 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 1</h3>
+        <p><strong>Pozice:</strong> IGL</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- 2 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 2</h3>
+        <p><strong>Pozice:</strong> AWP</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 3</h3>
+        <p><strong>Pozice:</strong> ENTRY</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 4</h3>
+        <p><strong>Pozice:</strong> LURKER</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 5</h3>
+        <p><strong>Pozice:</strong> RIFLER / SUPPORT</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 6</h3>
+        <p><strong>Pozice:</strong> IGL</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 7</h3>
+        <p><strong>Pozice:</strong> AWP</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 8</h3>
+        <p><strong>Pozice:</strong> ENTRY</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 9</h3>
+        <p><strong>Pozice:</strong> LURKER</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="player">
+      <div class="player-top">TBA</div>
+      <img src="black.png" class="player-photo">
+      <div class="player-info">
+        <h3>HRÁČ 10</h3>
+        <p><strong>Pozice:</strong> RIFLER / SUPPORT</p>
+        <p>Jsme BAITTERS, začínající český esport tým. Chceme vyhrávat turnaje a dostat se tam, kam ostatní nedokázali.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 </body>
 </html>
