@@ -1,40 +1,3 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAITTERS ESPORTS - Zápasy</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="top-header">
-  <div class="logo-box">
-    <img src="1.png" alt="BAITTERS Logo">
-  </div>
-  <div class="title-box">
-    <h1>BAITTERS</h1>
-    <p>CZ/SK ESPORT ORGANIZACE</p>
-  </div>
-</header>
-
-<nav class="nav">
-  <a href="index.html">HOME</a>
-  <a href="onas.html">O NÁS</a>
-  <a href="tym.html">NÁŠ TÝM</a>
-  <a href="zapasy.html" class="active">ZÁPASY</a>
-  <a href="partneri.html">PARTNEŘI</a>
-  <a href="galerie.html">GALERIE</a>
-  <a href="kontakt.html">KONTAKT</a>
-</nav>
-
-<section class="hero-section">
-  <div class="hero-content">
-    <h2 class="hero-big">Zápasy BAITTERS</h2>
-    <p>Výsledky, statistiky a nadcházející utkání</p>
-  </div>
-</section>
-
 <section class="main-content">
 
   <div class="content-box">
@@ -44,21 +7,60 @@
 
   <div class="content-box">
     <h3>Poslední zápasy</h3>
-    <ul>
-      <li>30.05.2025 – BAITTERS vs SK Team – 16:4</li>
-      <li>28.05.2025 – BAITTERS vs CZ Pro – 8:16</li>
-      <li>26.05.2025 – BAITTERS vs EU Squad – 13:11</li>
-      <li>24.05.2025 – BAITTERS vs Rivals – 16:2</li>
-      <li>22.05.2025 – BAITTERS vs RedHot – 7:16</li>
-    </ul>
+
+    <table class="matches-table">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Soupeř</th>
+          <th>Typ zápasu</th>
+          <th>Skóre</th>
+          <th>Poznámka</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>30.05.2025</td>
+          <td>SK Team</td>
+          <td>Turnaj</td>
+          <td><span class="score-win">16:4</span></td>
+          <td>Výborný výkon</td>
+        </tr>
+
+        <tr>
+          <td>28.05.2025</td>
+          <td>CZ Pro</td>
+          <td>Přátelský</td>
+          <td><span class="score-loss">8:16</span></td>
+          <td>Chyby v obraně</td>
+        </tr>
+
+        <tr>
+          <td>26.05.2025</td>
+          <td>EU Squad</td>
+          <td>Turnaj</td>
+          <td><span class="score-win">13:11</span></td>
+          <td>Těsná výhra</td>
+        </tr>
+
+        <tr>
+          <td>24.05.2025</td>
+          <td>Rivals</td>
+          <td>Přátelský</td>
+          <td><span class="score-win">16:2</span></td>
+          <td>Dominance</td>
+        </tr>
+
+        <tr>
+          <td>22.05.2025</td>
+          <td>RedHot</td>
+          <td>Turnaj</td>
+          <td><span class="score-loss">7:16</span></td>
+          <td>Slabší začátek</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
 </section>
-
-<footer class="footer">
-  <p>&copy; 2025 BAITTERS. Všechna práva vyhrazena.</p>
-  <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
-</footer>
-
-</body>
-</html>
