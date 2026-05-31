@@ -7,9 +7,9 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #050507 0%, #8b0000 50%, #050507 100%);
+  background: radial-gradient(circle at top, #8b0000 0%, #050507 45%, #000000 100%);
   background-attachment: fixed;
-  color: white;
+  color: #f5f5f5;
   line-height: 1.6;
 }
 
@@ -17,60 +17,65 @@ body {
 :root {
   --red: #ff2a2a;
   --gold: #d4af37;
-  --dark: #0a0a0d;
-  --dark2: #111116;
-  --glow-red: 0 0 15px rgba(255, 40, 40, 0.7);
-  --glow-gold: 0 0 15px rgba(212,175,55,0.7);
+  --dark: #050507;
+  --dark2: #101018;
+  --glow-red: 0 0 18px rgba(255, 40, 40, 0.8);
+  --glow-gold: 0 0 18px rgba(212,175,55,0.8);
 }
 
 /* HLAVIČKA */
 .top-header {
   display: flex;
   align-items: center;
-  padding: 25px 50px;
-  background: #0b0b0f;
-  border-bottom: 3px solid var(--gold);
-  box-shadow: 0 0 25px rgba(212,175,55,0.3);
+  padding: 20px 60px;
+  background: rgba(5,5,10,0.95);
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 0 25px rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
 }
 
 .logo-box img {
-  height: 90px;
-  filter: drop-shadow(0 0 10px rgba(212,175,55,0.4));
+  height: 80px;
+  filter: drop-shadow(0 0 12px rgba(212,175,55,0.6));
 }
 
 .title-box {
-  margin-left: 20px;
+  margin-left: 18px;
 }
 
 .title-box h1 {
-  font-size: 48px;
+  font-size: 40px;
   color: var(--gold);
   text-shadow: var(--glow-gold);
+  letter-spacing: 3px;
 }
 
 .title-box p {
   color: var(--red);
-  font-size: 16px;
-  letter-spacing: 2px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 /* NAVIGACE */
 .nav {
-  background: #0d0d12;
+  background: rgba(8,8,14,0.98);
   display: flex;
-  padding: 15px 50px;
-  gap: 35px;
-  border-bottom: 2px solid #1a1a1f;
+  padding: 12px 60px;
+  gap: 30px;
+  border-bottom: 1px solid #1b1b24;
+  box-shadow: 0 0 18px rgba(0,0,0,0.7);
 }
 
 .nav a {
-  color: white;
+  color: #f5f5f5;
   text-decoration: none;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
 }
 
 .nav a::after {
@@ -79,9 +84,9 @@ body {
   bottom: 0;
   left: 0;
   width: 0%;
-  height: 3px;
+  height: 2px;
   background: var(--gold);
-  transition: 0.3s;
+  transition: 0.25s;
   box-shadow: var(--glow-gold);
 }
 
@@ -90,86 +95,160 @@ body {
   width: 100%;
 }
 
-/* SEKCE */
+/* OBECNÁ SEKCE */
 .section {
   width: 100%;
-  padding: 80px 50px;
+  padding: 70px 60px;
 }
 
-/* NADPISY */
-.section-title,
-.team-title {
-  text-align: center;
-  font-size: 55px;
-  font-weight: 900;
-  color: var(--gold);
-  text-shadow: var(--glow-gold);
-  margin-bottom: 40px;
+/* HLAVNÍ HERO / HOME */
+.hero {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-/* NOVINY – univerzální */
-.home-news-box {
-  background: rgba(10, 10, 10, 0.75);
+/* NOVINY BOX */
+.news-box {
+  background: rgba(10, 10, 16, 0.9);
   border: 2px solid var(--gold);
-  padding: 40px;
+  padding: 28px;
   border-radius: 14px;
   box-shadow: 0 0 25px rgba(212,175,55,0.35);
   backdrop-filter: blur(4px);
-  width: 450px;
-  margin: 0 auto;
 }
 
 .news-title {
   color: var(--gold);
-  font-size: 36px;
-  margin-bottom: 25px;
+  font-size: 26px;
+  margin-bottom: 18px;
   text-align: center;
   text-shadow: var(--glow-gold);
 }
 
 .news-item {
-  background: rgba(20, 20, 20, 0.85);
+  background: rgba(18, 18, 24, 0.95);
   border-left: 4px solid var(--red);
-  padding: 18px 22px;
-  margin-bottom: 22px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
   border-radius: 8px;
   transition: 0.25s;
 }
 
 .news-item:hover {
-  transform: translateX(6px);
-  box-shadow: 0 0 15px rgba(255,40,40,0.4);
+  transform: translateX(5px);
+  box-shadow: 0 0 15px rgba(255,40,40,0.5);
 }
 
 .news-item h3 {
   color: var(--gold);
-  font-size: 20px;
-  margin-bottom: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
 }
 
 .news-item p {
   color: #ddd;
-  font-size: 17px;
+  font-size: 14px;
 }
 
-/* TÝM – opravený, menší, moderní */
+/* HERO TEXT */
+.hero-main {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+  margin-bottom: 14px;
+  letter-spacing: 4px;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 26px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* TLAČÍTKA */
+.btn-red {
+  background: var(--red);
+  padding: 12px 24px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: var(--glow-red);
+  transition: 0.25s;
+  font-size: 14px;
+}
+
+.btn-red:hover {
+  background: #ff4444;
+  box-shadow: 0 0 24px rgba(255, 40, 40, 0.9);
+}
+
+.btn-outline {
+  border: 2px solid var(--gold);
+  padding: 12px 24px;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: 0.25s;
+  font-size: 14px;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: #000;
+  box-shadow: var(--glow-gold);
+}
+
+/* OBECNÉ NADPISY */
+.page-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+  margin-bottom: 30px;
+}
+
+.page-sub {
+  text-align: center;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  font-size: 16px;
+}
+
+/* TÝM */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
+  gap: 28px;
   justify-items: center;
 }
 
 .player-card {
   position: relative;
-  width: 160px;
-  height: 190px;
+  width: 150px;
+  height: 180px;
   border: 2px solid var(--gold);
   border-radius: 12px;
   overflow: hidden;
   background: #0d0d12;
   transition: 0.3s;
-  box-shadow: 0 0 15px rgba(212,175,55,0.2);
+  box-shadow: 0 0 15px rgba(212,175,55,0.25);
 }
 
 .player-card img {
@@ -179,8 +258,8 @@ body {
 }
 
 .player-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+  transform: scale(1.07);
+  box-shadow: 0 0 24px rgba(212,175,55,0.7);
 }
 
 .player-info {
@@ -189,68 +268,97 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10,10,10,0.92);
+  background: rgba(5,5,8,0.96);
   border-top: 2px solid var(--gold);
-  padding: 15px;
+  padding: 14px;
   text-align: center;
   transition: 0.35s ease-in-out;
 }
 
 .player-info h3 {
   color: var(--gold);
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 17px;
+  margin-bottom: 6px;
 }
 
 .player-info p {
   color: #ccc;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .player-card:hover .player-info {
   bottom: 0;
 }
 
-/* TLAČÍTKA */
-.btn-red {
-  background: var(--red);
-  padding: 14px 28px;
-  color: white;
-  text-decoration: none;
+/* O NÁS */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.about-highlight {
+  color: var(--gold);
   font-weight: 700;
-  border-radius: 8px;
-  box-shadow: var(--glow-red);
-  transition: 0.3s;
 }
 
-.btn-red:hover {
-  background: #ff4444;
-  box-shadow: 0 0 25px rgba(255, 40, 40, 0.9);
-}
-
-.btn-outline {
+.about-box {
+  background: rgba(10,10,16,0.9);
+  border-radius: 14px;
   border: 2px solid var(--gold);
-  padding: 14px 28px;
+  padding: 24px;
+  box-shadow: 0 0 22px rgba(212,175,55,0.35);
+}
+
+/* KONTAKT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+}
+
+.contact-info {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.contact-info a {
   color: var(--gold);
   text-decoration: none;
-  font-weight: 700;
-  border-radius: 8px;
-  transition: 0.3s;
+  font-weight: 600;
 }
 
-.btn-outline:hover {
-  background: var(--gold);
-  color: black;
-  box-shadow: var(--glow-gold);
+.contact-info a:hover {
+  text-shadow: var(--glow-gold);
+}
+
+.contact-box {
+  background: rgba(10,10,16,0.9);
+  border-radius: 14px;
+  border: 2px solid var(--gold);
+  padding: 24px;
+  box-shadow: 0 0 22px rgba(212,175,55,0.35);
 }
 
 /* FOOTER */
 .footer {
-  background: #0b0b0f;
+  background: #050509;
   text-align: center;
-  padding: 25px;
-  border-top: 3px solid var(--gold);
-  box-shadow: 0 0 20px rgba(212,175,55,0.3);
+  padding: 22px;
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  margin-top: 40px;
+}
+
+.footer p {
+  font-size: 13px;
+  color: #ccc;
 }
 
 .footer a {
