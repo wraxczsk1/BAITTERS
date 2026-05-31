@@ -95,12 +95,13 @@ body {
   width: 100%;
 }
 
-/* SEKCE HOME – STEJNÁ STRUKTURA: NOVINY + WELCOME */
+/* SEKCE */
 .section {
   width: 100%;
   padding: 70px 60px;
 }
 
+/* HOME – NOVINY + WELCOME */
 .home-layout {
   display: grid;
   grid-template-columns: 420px 1fr;
@@ -108,14 +109,13 @@ body {
   align-items: center;
 }
 
-/* NOVINY VLEVO */
+/* NOVINY */
 .home-news-box {
   background: rgba(10, 10, 16, 0.9);
   border: 2px solid var(--gold);
   padding: 28px;
   border-radius: 14px;
   box-shadow: 0 0 25px rgba(212,175,55,0.35);
-  backdrop-filter: blur(4px);
 }
 
 .news-title {
@@ -151,15 +151,9 @@ body {
   font-size: 14px;
 }
 
-/* WELCOME VPRAVO – PROFESIONÁLNÍ, UPROSTŘED BLOKU */
+/* WELCOME */
 .home-welcome {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  max-width: 650px;
-  margin: 0 auto;
 }
 
 .welcome-title {
@@ -168,7 +162,6 @@ body {
   color: var(--gold);
   text-shadow: var(--glow-gold);
   margin-bottom: 18px;
-  letter-spacing: 4px;
 }
 
 .welcome-text {
@@ -176,6 +169,8 @@ body {
   color: #ccc;
   margin-bottom: 28px;
   max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-buttons {
@@ -194,7 +189,6 @@ body {
   border-radius: 8px;
   box-shadow: var(--glow-red);
   transition: 0.25s;
-  font-size: 14px;
 }
 
 .btn-red:hover {
@@ -210,31 +204,12 @@ body {
   font-weight: 700;
   border-radius: 8px;
   transition: 0.25s;
-  font-size: 14px;
 }
 
 .btn-outline:hover {
   background: var(--gold);
   color: #000;
   box-shadow: var(--glow-gold);
-}
-
-/* DALŠÍ STRÁNKY – NADPISY */
-.page-title {
-  text-align: center;
-  font-size: 42px;
-  font-weight: 900;
-  color: var(--gold);
-  text-shadow: var(--glow-gold);
-  margin-bottom: 30px;
-}
-
-.page-sub {
-  text-align: center;
-  color: #ccc;
-  max-width: 700px;
-  margin: 0 auto 40px auto;
-  font-size: 16px;
 }
 
 /* TÝM */
@@ -254,7 +229,6 @@ body {
   overflow: hidden;
   background: #0d0d12;
   transition: 0.3s;
-  box-shadow: 0 0 15px rgba(212,175,55,0.25);
 }
 
 .player-card img {
@@ -281,75 +255,8 @@ body {
   transition: 0.35s ease-in-out;
 }
 
-.player-info h3 {
-  color: var(--gold);
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.player-info p {
-  color: #ccc;
-  font-size: 14px;
-}
-
 .player-card:hover .player-info {
   bottom: 0;
-}
-
-/* O NÁS */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-text {
-  font-size: 16px;
-  color: #ddd;
-}
-
-.about-highlight {
-  color: var(--gold);
-  font-weight: 700;
-}
-
-.about-box {
-  background: rgba(10,10,16,0.9);
-  border-radius: 14px;
-  border: 2px solid var(--gold);
-  padding: 24px;
-  box-shadow: 0 0 22px rgba(212,175,55,0.35);
-}
-
-/* KONTAKT */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-}
-
-.contact-info {
-  font-size: 16px;
-  color: #ddd;
-}
-
-.contact-info a {
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact-info a:hover {
-  text-shadow: var(--glow-gold);
-}
-
-.contact-box {
-  background: rgba(10,10,16,0.9);
-  border-radius: 14px;
-  border: 2px solid var(--gold);
-  padding: 24px;
-  box-shadow: 0 0 22px rgba(212,175,55,0.35);
 }
 
 /* FOOTER */
@@ -358,7 +265,6 @@ body {
   text-align: center;
   padding: 22px;
   border-top: 2px solid var(--gold);
-  box-shadow: 0 0 20px rgba(0,0,0,0.8);
   margin-top: 40px;
 }
 
@@ -371,8 +277,4 @@ body {
   color: var(--gold);
   text-decoration: none;
   font-weight: 600;
-}
-
-.footer a:hover {
-  text-shadow: var(--glow-gold);
 }
