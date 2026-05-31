@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAITTERS ESPORTS - Kontakt</title>
+  <title>BAITTERS ESPORTS - Kontakt na nás</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,9 +29,10 @@
 </nav>
 
 <section class="hero-section">
-  <div class="hero-content">
-    <h2 class="hero-big">Kontakt</h2>
-    <p>Napište nám</p>
+  <div class="text-block">
+    <img src="1.png" class="onas-logo">
+    <h2>KONTAKT NA NÁS</h2>
+    <p>Napište nám nebo nás kontaktujte přes sociální sítě.</p>
   </div>
 </section>
 
@@ -39,40 +40,37 @@
 
   <div class="contact-section">
 
+    <!-- LEVÁ STRANA -->
     <div class="contact-box">
       <h3>Kontakt</h3>
-      
-<!-- Instagram Button -->
-<a href="https://www.instagram.com/baitters_cs/" target="_blank"
-   style="display:flex; align-items:center; gap:10px; background:#ff3b3b; padding:10px 14px; border-radius:6px; text-decoration:none; color:white; font-weight:600; margin-top:10px; width:fit-content;">
-    <img src="2.png" alt="Instagram Logo" style="width:26px; height:26px;">
-    Instagram
-</a>
 
-<!-- Email Button -->
-<a href="mailto:info@baitters.cz"
-   style="display:flex; align-items:center; gap:10px; background:#ff3b3b; padding:10px 14px; border-radius:6px; text-decoration:none; color:white; font-weight:600; margin-top:10px; width:fit-content;">
-    <img src="1.png" alt="Email Logo" style="width:26px; height:26px;">
-    Email
-</a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/baitters_cs/" target="_blank" class="contact-btn">
+        <img src="icons/ig.png" alt="Instagram">
+        Instagram
+      </a>
 
-<!-- Discord Button -->
-<a href="https://discord.gg/kzWwqVVT" target="_blank"
-   style="display:flex; align-items:center; gap:10px; background:#ff3b3b; padding:10px 14px; border-radius:6px; text-decoration:none; color:white; font-weight:600; margin-top:10px; width:fit-content;">
-    <img src="1.png" alt="Discord Logo" style="width:26px; height:26px;">
-    Discord
-</a>
+      <!-- Email -->
+      <a href="mailto:info@baitters.cz" class="contact-btn">
+        <img src="icons/mail.png" alt="Email">
+        Email
+      </a>
 
-
+      <!-- Discord -->
+      <a href="https://discord.gg/kzWwqVVT" target="_blank" class="contact-btn">
+        <img src="icons/discord.png" alt="Discord">
+        Discord
+      </a>
     </div>
 
+    <!-- PRAVÁ STRANA -->
     <div class="contact-box">
       <h3>Napište nám</h3>
       <form class="contact-form">
-        <input type="text" placeholder="Vaše jméno">
-        <input type="email" placeholder="Email">
-        <textarea rows="5" placeholder="Zpráva"></textarea>
-        <button class="btn btn-primary">Odeslat</button>
+        <input type="text" placeholder="Vaše jméno" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" placeholder="Zpráva" required></textarea>
+        <button class="btn-red">Odeslat</button>
       </form>
     </div>
 
@@ -85,8 +83,5 @@
   <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
 </footer>
 
-
-
-  
 </body>
 </html>
