@@ -187,7 +187,7 @@ body {
   justify-items: center;
 }
 
-/* KARTA HRÁČE */
+/* KARTA HRÁČE – NOVÝ ESPORT STYL */
 .player-card {
   width: 240px;
   background: #0d0d12;
@@ -195,22 +195,60 @@ body {
   border-radius: 12px;
   overflow: hidden;
   transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.3);
 }
 
 .player-card:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(255, 40, 40, 0.7);
 }
 
-/* MALÁ IKONKA MÍSTO FOTKY */
+/* IKONKA HRÁČE (malá vlajka nahoře) */
 .player-icon {
-  width: 45px;
-  height: 30px;
-  object-fit: cover;
+  width: 50px;
+  height: 34px;
+  margin: 15px auto 0 auto;
+  display: block;
   border-radius: 4px;
-  margin-top: 15px;
+  object-fit: cover;
   box-shadow: var(--glow);
+}
+
+/* Jméno + vlajka */
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* VLÁJKA – NOVÁ (už ne hexagon) */
+.flag {
+  width: 28px;
+  height: 20px;
+  border-radius: 3px;
+  object-fit: cover;
+  box-shadow: var(--glow);
+}
+
+/* TEXT V KARTĚ */
+.player-info {
+  padding: 18px;
+  background: #0a0a0d;
+  border-top: 2px solid var(--red);
+}
+
+.player-info h3 {
+  margin: 0;
+  color: var(--red);
+  font-size: 22px;
+  text-shadow: var(--glow);
+}
+
+.player-info p {
+  margin-top: 5px;
+  color: #ccc;
+  font-size: 16px;
 }
 
 .player-info {
