@@ -99,6 +99,72 @@ body {
   letter-spacing: 4px;
 }
 
+/* TEXTOVÝ BLOK */
+.text-block {
+  background: rgba(10, 10, 13, 0.85);
+  border: 2px solid var(--red);
+  padding: 35px;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 40, 40, 0.4);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.text-block h2 {
+  font-size: 60px;
+  color: var(--red);
+  text-shadow: var(--glow);
+  margin-bottom: 15px;
+}
+
+.text-block p {
+  font-size: 20px;
+  color: #ddd;
+  margin-bottom: 25px;
+}
+
+/* ANIMACE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TLAČÍTKA */
+.btn-red {
+  background: var(--red);
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.6);
+  transition: 0.3s;
+}
+
+.btn-red:hover {
+  background: #ff4444;
+  box-shadow: 0 0 25px rgba(255, 40, 40, 0.9);
+}
+
+.btn-outline {
+  border: 2px solid var(--red);
+  padding: 12px 25px;
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 40, 40, 0.8);
+}
+
 /* HLAVNÍ OBSAH */
 .main-content {
   padding: 50px;
