@@ -1,178 +1,349 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAITTERS ESPORTS - Náš tým</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ZÁKLAD */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<header class="top-header">
-  <div class="logo-box">
-    <img src="1.png" alt="BAITTERS Logo">
-  </div>
-  <div class="title-box">
-    <h1>BAITTERS</h1>
-    <p>CZ/SK ESPORT ORGANIZACE</p>
-  </div>
-</header>
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #050507;
+  color: white;
+  line-height: 1.6;
+}
 
-<nav class="nav">
-  <a href="index.html">HOME</a>
-  <a href="onas.html">O NÁS</a>
-  <a href="tym.html" class="active">NÁŠ TÝM</a>
-  <a href="zapasy.html">ZÁPASY</a>
-  <a href="partneri.html">PARTNEŘI</a>
-  <a href="galerie.html">GALERIE</a>
-  <a href="kontakt.html">KONTAKT</a>
-</nav>
+/* GLOW ČERVENÁ */
+:root {
+  --red: #ff2a2a;
+  --dark: #0a0a0d;
+  --dark2: #111116;
+  --glow: 0 0 15px rgba(255, 40, 40, 0.7);
+}
 
-<!-- HERO BLOK -->
-<section class="hero-section">
-  <div class="text-block">
-    <img src="1.png" class="onas-logo">
-    <h2>NÁŠ TÝM</h2>
-    <p>Seznam hráčů hlavního týmu a akademie BAITTERS.</p>
-  </div>
-</section>
+/* HLAVIČKA */
+.top-header {
+  display: flex;
+  align-items: center;
+  padding: 25px 50px;
+  background: #0b0b0f;
+  border-bottom: 3px solid var(--red);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+}
 
-<section class="main-content">
+.logo-box img {
+  height: 90px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.4));
+}
 
-  <!-- MAIN TEAM -->
-  <h2 class="hero-big" style="font-size:42px; text-align:center; margin-bottom:20px;">
-    MAIN TEAM
-  </h2>
+.title-box h1 {
+  font-size: 48px;
+  color: white;
+  text-shadow: var(--glow);
+}
 
-  <div class="team-grid">
+.title-box p {
+  color: var(--red);
+  font-size: 16px;
+  letter-spacing: 2px;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Hráč">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>SHADOW</h3>
-          <img src="cz.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+/* NAVIGACE */
+.nav {
+  background: #0d0d12;
+  display: flex;
+  padding: 15px 50px;
+  gap: 35px;
+  border-bottom: 2px solid #1a1a1f;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Hráč">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>FROST</h3>
-          <img src="sk.png" class="flag">
-        </div>
-        <p>AWP</p>
-      </div>
-    </div>
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 5px;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Hráč">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>VENOM</h3>
-          <img src="cz.png" class="flag">
-        </div>
-        <p>Support</p>
-      </div>
-    </div>
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--red);
+  transition: 0.3s;
+  box-shadow: var(--glow);
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Hráč">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>RAVEN</h3>
-          <img src="sk.png" class="flag">
-        </div>
-        <p>IGL</p>
-      </div>
-    </div>
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Hráč">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>BLAZE</h3>
-          <img src="cz.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+/* HERO */
+.hero-section {
+  padding: 100px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #0a0a0d 0%, #1a0d0d 100%);
+  box-shadow: inset 0 0 80px rgba(255, 0, 0, 0.2);
+}
 
-  </div>
+.hero-big {
+  font-size: 70px;
+  font-weight: 900;
+  color: var(--red);
+  text-shadow: var(--glow);
+  letter-spacing: 4px;
+}
 
-  <!-- ACADEMY TEAM -->
-  <h2 class="hero-big" style="font-size:42px; text-align:center; margin:50px 0 20px 0;">
-    ACADEMY TEAM
-  </h2>
+/* TEXTOVÝ BLOK */
+.text-block {
+  background: rgba(10, 10, 13, 0.85);
+  border: 2px solid var(--red);
+  padding: 35px;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 40, 40, 0.4);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
 
-  <div class="team-grid">
+.text-block h2 {
+  font-size: 60px;
+  color: var(--red);
+  text-shadow: var(--glow);
+  margin-bottom: 15px;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Academy Player">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>NOVA</h3>
-          <img src="cz.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+.text-block p {
+  font-size: 20px;
+  color: #ddd;
+  margin-bottom: 25px;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Academy Player">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>ZERO</h3>
-          <img src="sk.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+.onas-logo {
+  width: 140px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(255, 40, 40, 0.7));
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Academy Player">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>PHANTOM</h3>
-          <img src="cz.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+/* ANIMACE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Academy Player">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>STRIKER</h3>
-          <img src="sk.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+/* TLAČÍTKA */
+.btn-red {
+  background: var(--red);
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.6);
+  transition: 0.3s;
+}
 
-    <div class="player-card">
-      <img src="2.png" alt="Academy Player">
-      <div class="player-info">
-        <div class="name-row">
-          <h3>GHOST</h3>
-          <img src="cz.png" class="flag">
-        </div>
-        <p>Rifle</p>
-      </div>
-    </div>
+.btn-red:hover {
+  background: #ff4444;
+  box-shadow: 0 0 25px rgba(255, 40, 40, 0.9);
+}
 
-  </div>
+.btn-outline {
+  border: 2px solid var(--red);
+  padding: 12px 25px;
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: 0.3s;
+}
 
-</section>
+.btn-outline:hover {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 0 20px rgba(255, 40, 40, 0.8);
+}
 
-<footer class="footer">
-  <p>&copy; 2025 BAITTERS. Všechna práva vyhrazena.</p>
-  <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
-</footer>
+/* HLAVNÍ OBSAH */
+.main-content {
+  padding: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-</body>
-</html>
+/* TÝM GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 35px;
+  margin-top: 40px;
+  justify-items: center;
+}
+
+/* KARTA HRÁČE */
+.player-card {
+  width: 240px;
+  background: #0d0d12;
+  border: 2px solid var(--red);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.25);
+}
+
+.player-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+}
+
+/* MALÁ IKONKA MÍSTO FOTKY */
+.player-icon {
+  width: 45px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: 15px;
+  box-shadow: var(--glow);
+}
+
+/* HEXAGON VLÁJKY — TOP ESPORT STYL */
+.flag {
+  width: 34px;
+  height: 24px;
+  clip-path: polygon(
+    25% 0%, 75% 0%,
+    100% 50%,
+    75% 100%, 25% 100%,
+    0% 50%
+  );
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.7);
+  margin-top: 6px;
+}
+
+.player-info {
+  padding: 18px;
+  background: #0a0a0d;
+  border-top: 2px solid var(--red);
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.player-info h3 {
+  margin: 0;
+  color: var(--red);
+  font-size: 22px;
+  text-shadow: var(--glow);
+}
+
+.player-info p {
+  margin-top: 5px;
+  color: #ccc;
+  font-size: 16px;
+}
+
+/* ZÁPASY */
+.match-box {
+  background: #0d0d12;
+  border: 2px solid var(--red);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 40, 40, 0.3);
+  transition: 0.3s;
+}
+
+.match-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(255, 40, 40, 0.6);
+}
+
+.match-box h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--red);
+  text-shadow: var(--glow);
+}
+
+.match-box p {
+  margin: 5px 0 10px 0;
+  color: #ccc;
+  font-size: 15px;
+}
+
+.match-score {
+  font-size: 26px;
+  font-weight: 900;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  text-shadow: 0 0 10px black;
+  float: right;
+}
+
+.match-score.win {
+  background: #1fa83d;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.match-score.lose {
+  background: #b30000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* FOOTER */
+.footer {
+  background: #0b0b0f;
+  text-align: center;
+  padding: 25px;
+  border-top: 3px solid var(--red);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.footer a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-shadow: var(--glow);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .player-card {
+    width: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .player-card {
+    width: 85%;
+  }
+}
