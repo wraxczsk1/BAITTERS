@@ -85,45 +85,7 @@
   <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
 </footer>
 
-<script>
-fetch("matches.json")
-  .then(response => response.json())
-  .then(data => {
-    
-    // Nadcházející zápasy
-    const upcomingTable = document.getElementById("upcoming-matches");
-    data.upcoming.forEach(match => {
-      upcomingTable.innerHTML += `
-        <tr>
-          <td>${match.date}</td>
-          <td>${match.opponent}</td>
-          <td>${match.type}</td>
-          <td>${match.status}</td>
-          <td>${match.note}</td>
-        </tr>
-      `;
-    });
 
-    // Poslední zápasy
-    const finishedTable = document.getElementById("finished-matches");
-    data.finished.forEach(match => {
-      const scoreClass = match.score.split(":")[0] > match.score.split(":")[1]
-        ? "score-win"
-        : "score-loss";
-
-      finishedTable.innerHTML += `
-        <tr>
-          <td>${match.date}</td>
-          <td>${match.opponent}</td>
-          <td>${match.type}</td>
-          <td><span class="${scoreClass}">${match.score}</span></td>
-          <td>${match.note}</td>
-        </tr>
-      `;
-    });
-
-  });
-</script>
 
   
 </body>
