@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAITTERS ESPORTS - Kontakt na nás</title>
+  <title>KONTAKT – BAITTERS ESPORTS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,41 +28,49 @@
   <a href="kontakt.html" class="active">KONTAKT</a>
 </nav>
 
+<!-- SEKCE 1 – TITULEK -->
+<section class="section block-dark text-center">
+  <h2 class="section-title">KONTAKT</h2>
+  <p class="text">
+    Máš dotaz, zájem o spolupráci nebo chceš vstoupit do organizace?  
+    Napiš nám – odpovíme co nejdříve.
+  </p>
+</section>
 
+<!-- SEKCE 2 – KONTAKTNÍ ÚDAJE -->
+<section class="section block-red">
+  <h2 class="section-title">KONTAKTNÍ ÚDAJE</h2>
 
-    <!-- LEVÁ STRANA -->
-    <div class="contact-box">
-      <h3>Kontakt</h3>
+  <p class="text" style="text-align:center;">
+    📧 Email: <strong>info@baitters.cz</strong><br><br>
+    🌐 Discord: <strong>discord.gg/BAITTERS</strong><br><br>
+    🕹️ Hráčské přihlášky: <strong>recruit@baitters.cz</strong><br><br>
+    🤝 Spolupráce & partnerství: <strong>partners@baitters.cz</strong>
+  </p>
+</section>
 
-      <a href="https://www.instagram.com/baitters_cs/" target="_blank" class="contact-btn">
-        <img src="icons/ig.png" alt="Instagram">
-        Instagram
-      </a>
+<!-- SEKCE 3 – FORMULÁŘ (statický) -->
+<section class="section block-gold">
+  <h2 class="section-title">NAPIŠ NÁM</h2>
 
-      <a href="mailto:info@baitters.cz" class="contact-btn">
-        <img src="icons/mail.png" alt="Email">
-        Email
-      </a>
+  <div class="text" style="max-width:600px; margin:0 auto;">
 
-      <a href="https://discord.gg/kzWwqVVT" target="_blank" class="contact-btn">
-        <img src="icons/discord.png" alt="Discord">
-        Discord
-      </a>
-    </div>
+    <form action="#" method="post">
 
-    <!-- PRAVÁ STRANA -->
-    <div class="contact-box">
-      <h3>Napište nám</h3>
-      <form class="contact-form">
-        <input type="text" placeholder="Vaše jméno" required>
-        <input type="email" placeholder="Email" required>
-        <textarea rows="5" placeholder="Zpráva" required></textarea>
-        <button class="btn-red">Odeslat</button>
-      </form>
-    </div>
+      <label>Jméno</label>
+      <input type="text" name="name" style="width:100%; padding:12px; margin-bottom:15px; background:#0d0d12; border:2px solid var(--gold); color:white; border-radius:8px;">
+
+      <label>Email</label>
+      <input type="email" name="email" style="width:100%; padding:12px; margin-bottom:15px; background:#0d0d12; border:2px solid var(--gold); color:white; border-radius:8px;">
+
+      <label>Zpráva</label>
+      <textarea name="message" rows="5" style="width:100%; padding:12px; margin-bottom:15px; background:#0d0d12; border:2px solid var(--gold); color:white; border-radius:8px;"></textarea>
+
+      <button type="submit" class="btn-red" style="width:100%; text-align:center;">Odeslat</button>
+
+    </form>
 
   </div>
-
 </section>
 
 <footer class="footer">
