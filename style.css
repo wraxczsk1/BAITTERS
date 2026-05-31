@@ -7,7 +7,8 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #050507;
+  background: linear-gradient(135deg, #050507 0%, #8b0000 50%, #050507 100%);
+  background-attachment: fixed;
   color: white;
   line-height: 1.6;
 }
@@ -95,23 +96,84 @@ body {
   padding: 80px 50px;
 }
 
-.text-center {
-  text-align: center;
+/* HOME LAYOUT */
+.home-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
 }
 
-.section-title {
-  font-size: 60px;
+/* NOVINY */
+.home-news-box {
+  background: rgba(10, 10, 10, 0.75);
+  border: 2px solid var(--gold);
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.35);
+  backdrop-filter: blur(4px);
+  width: 420px;
+}
+
+.news-title {
+  color: var(--gold);
+  font-size: 34px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: var(--glow-gold);
+}
+
+.news-item {
+  background: rgba(20, 20, 20, 0.85);
+  border-left: 4px solid var(--red);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.news-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 0 15px rgba(255,40,40,0.4);
+}
+
+.news-item h3 {
+  color: var(--gold);
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+
+.news-item p {
+  color: #ddd;
+  font-size: 16px;
+}
+
+/* WELCOME BLOK */
+.home-welcome {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.welcome-title {
+  font-size: 65px;
   font-weight: 900;
   color: var(--gold);
   text-shadow: var(--glow-gold);
   margin-bottom: 20px;
 }
 
-.text {
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 22px;
+.welcome-text {
+  font-size: 24px;
   color: #ccc;
+  margin-bottom: 30px;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* TLAČÍTKA */
@@ -145,121 +207,6 @@ body {
   background: var(--gold);
   color: black;
   box-shadow: var(--glow-gold);
-}
-
-/* HOME LAYOUT – NOVINKY VLEVO + WELCOME VPRAVO */
-.home-layout {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 50px;
-  align-items: center;
-}
-
-/* NOVINKY BOX */
-.home-news-box {
-  background: #0d0d12;
-  border: 2px solid var(--gold);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(212,175,55,0.3);
-}
-
-.news-title {
-  color: var(--gold);
-  font-size: 26px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.news-item {
-  background: #111116;
-  border-left: 3px solid var(--gold);
-  padding: 10px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-}
-
-.news-item h3 {
-  color: var(--gold);
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-.news-item p {
-  color: #ccc;
-  font-size: 14px;
-}
-
-/* WELCOME TEXT */
-.home-welcome {
-  text-align: center;
-}
-
-.home-buttons {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-/* TÝM – MALÉ BOXY */
-.team-row-small {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  justify-items: center;
-  margin-top: 40px;
-}
-
-.player-box-small {
-  position: relative;
-  width: 150px;
-  height: 180px;
-  overflow: hidden;
-  border: 2px solid var(--gold);
-  border-radius: 10px;
-  background: #0d0d12;
-  transition: 0.3s;
-}
-
-.player-box-small img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.player-box-small:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 20px rgba(212,175,55,0.7);
-}
-
-/* HOVER INFO */
-.player-info-hover-small {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10,10,10,0.92);
-  border-top: 2px solid var(--gold);
-  padding: 15px;
-  text-align: center;
-  transition: 0.35s ease-in-out;
-}
-
-.player-info-hover-small h3 {
-  color: var(--gold);
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.player-info-hover-small p {
-  color: #ccc;
-  font-size: 15px;
-}
-
-.player-box-small:hover .player-info-hover-small {
-  bottom: 0;
 }
 
 /* FOOTER */
