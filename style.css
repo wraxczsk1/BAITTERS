@@ -99,43 +99,6 @@ body {
   color: #ccc;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* TLAČÍTKA */
-.btn {
-  padding: 12px 30px;
-  border: 2px solid #b30000;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 600;
-  transition: all 0.3s;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: #b30000;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #ff0000;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: #ff3b3b;
-}
-
-.btn-secondary:hover {
-  background: #b30000;
-  color: white;
-}
-
 /* HLAVNÍ OBSAH */
 .main-content {
   padding: 40px;
@@ -143,49 +106,10 @@ body {
   margin: 0 auto;
 }
 
-.main-content h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  border-left: 4px solid #ff3b3b;
-  padding-left: 10px;
-}
-
-.content-box {
-  background: #1a1a1f;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 4px solid #b30000;
-  border-radius: 5px;
-}
-
-.content-box h3 {
-  color: #ff3b3b;
-  margin-bottom: 10px;
-}
-
-.content-box ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.content-box li {
-  padding: 8px 0;
-  padding-left: 20px;
-}
-
-.content-box a {
-  color: #ff3b3b;
-  text-decoration: none;
-}
-
-.content-box a:hover {
-  text-decoration: underline;
-}
-
 /* TÝM GRID */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   margin-top: 40px;
 }
@@ -228,68 +152,6 @@ body {
   color: #ccc;
 }
 
-/* GALERIE */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.gallery-item {
-  background: #1a1a1f;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #b30000;
-  border-radius: 5px;
-  font-size: 48px;
-}
-
-/* KONTAKT */
-.contact-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.contact-box {
-  background: #1a1a1f;
-  padding: 20px;
-  border-left: 4px solid #b30000;
-  border-radius: 5px;
-}
-
-.contact-box h3 {
-  color: #ff3b3b;
-  margin-bottom: 15px;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  background: #0a0a0d;
-  border: 1px solid #b30000;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 14px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #ff3b3b;
-}
-
 /* FOOTER */
 .footer {
   background: #0d0d12;
@@ -308,96 +170,25 @@ body {
   text-decoration: underline;
 }
 
-/* TABULKA ZÁPASŮ */
-.matches-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background: #111;
-  border: 2px solid #b30000;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.matches-table th {
-  background: #b30000;
-  color: white;
-  padding: 14px;
-  text-align: left;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.matches-table td {
-  padding: 14px;
-  border-bottom: 1px solid #333;
-  color: #ddd;
-  font-size: 16px;
-}
-
-.matches-table tr:nth-child(even) {
-  background: #141418;
-}
-
-.matches-table tr:hover {
-  background: #1f1f25;
-}
-
-.score-win {
-  color: #4caf50;
-  font-weight: bold;
-}
-
-.score-loss {
-  color: #ff3b3b;
-  font-weight: bold;
-}
-
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .top-header {
-    flex-direction: column;
-    padding: 15px 20px;
-  }
-
-  .title-box {
-    margin-left: 0;
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  .title-box h1 {
-    font-size: 32px;
-  }
-
-  .nav {
-    padding: 10px 20px;
-    gap: 10px;
-  }
-
-  .nav a {
-    font-size: 12px;
-    padding: 6px 8px;
-  }
-
-  .hero-section {
-    padding: 40px 20px;
-  }
-
-  .hero-content h2 {
-    font-size: 32px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
+@media (max-width: 1024px) {
   .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .main-content {
-    padding: 20px;
+  .hero-big {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
