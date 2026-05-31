@@ -95,100 +95,50 @@ body {
   width: 100%;
 }
 
-/* OBECNÁ SEKCE */
-.section {
+/* HERO FULL WIDTH */
+.hero-full {
   width: 100%;
-  padding: 70px 60px;
-}
-
-/* HLAVNÍ HERO / HOME */
-.hero {
-  display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-/* NOVINY BOX */
-.news-box {
-  background: rgba(10, 10, 16, 0.9);
-  border: 2px solid var(--gold);
-  padding: 28px;
-  border-radius: 14px;
-  box-shadow: 0 0 25px rgba(212,175,55,0.35);
+  padding: 140px 20px;
+  text-align: center;
+  background: rgba(10,10,16,0.6);
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 0 25px rgba(212,175,55,0.3);
   backdrop-filter: blur(4px);
 }
 
-.news-title {
-  color: var(--gold);
-  font-size: 26px;
-  margin-bottom: 18px;
-  text-align: center;
-  text-shadow: var(--glow-gold);
-}
-
-.news-item {
-  background: rgba(18, 18, 24, 0.95);
-  border-left: 4px solid var(--red);
-  padding: 12px 16px;
-  margin-bottom: 14px;
-  border-radius: 8px;
-  transition: 0.25s;
-}
-
-.news-item:hover {
-  transform: translateX(5px);
-  box-shadow: 0 0 15px rgba(255,40,40,0.5);
-}
-
-.news-item h3 {
-  color: var(--gold);
-  font-size: 15px;
-  margin-bottom: 4px;
-}
-
-.news-item p {
-  color: #ddd;
-  font-size: 14px;
-}
-
-/* HERO TEXT */
-.hero-main {
-  text-align: center;
-}
-
-.hero-title {
-  font-size: 56px;
+.hero-full h1 {
+  font-size: 90px;
   font-weight: 900;
   color: var(--gold);
   text-shadow: var(--glow-gold);
-  margin-bottom: 14px;
+  margin-bottom: 20px;
   letter-spacing: 4px;
 }
 
-.hero-sub {
-  font-size: 18px;
-  color: #ccc;
-  margin-bottom: 26px;
+.hero-full p {
+  font-size: 24px;
+  color: #ddd;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 20px;
 }
 
 /* TLAČÍTKA */
 .btn-red {
   background: var(--red);
-  padding: 12px 24px;
+  padding: 14px 28px;
   color: white;
   text-decoration: none;
   font-weight: 700;
   border-radius: 8px;
   box-shadow: var(--glow-red);
   transition: 0.25s;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .btn-red:hover {
@@ -198,13 +148,13 @@ body {
 
 .btn-outline {
   border: 2px solid var(--gold);
-  padding: 12px 24px;
+  padding: 14px 28px;
   color: var(--gold);
   text-decoration: none;
   font-weight: 700;
   border-radius: 8px;
   transition: 0.25s;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .btn-outline:hover {
@@ -213,151 +163,63 @@ body {
   box-shadow: var(--glow-gold);
 }
 
-/* OBECNÉ NADPISY */
-.page-title {
+/* NOVINY SEKCE */
+.news-section {
+  padding: 90px 50px;
   text-align: center;
-  font-size: 42px;
+}
+
+.news-main-title {
+  font-size: 55px;
   font-weight: 900;
   color: var(--gold);
   text-shadow: var(--glow-gold);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.page-sub {
-  text-align: center;
-  color: #ccc;
+.news-box {
   max-width: 700px;
-  margin: 0 auto 40px auto;
-  font-size: 16px;
+  margin: 0 auto;
 }
 
-/* TÝM */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 28px;
-  justify-items: center;
+.news-item {
+  background: rgba(20,20,26,0.9);
+  border-left: 4px solid var(--red);
+  padding: 18px 22px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  transition: 0.25s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-.player-card {
-  position: relative;
-  width: 150px;
-  height: 180px;
-  border: 2px solid var(--gold);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #0d0d12;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(212,175,55,0.25);
+.news-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 0 18px rgba(255,40,40,0.5);
 }
 
-.player-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.player-card:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 24px rgba(212,175,55,0.7);
-}
-
-.player-info {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(5,5,8,0.96);
-  border-top: 2px solid var(--gold);
-  padding: 14px;
-  text-align: center;
-  transition: 0.35s ease-in-out;
-}
-
-.player-info h3 {
+.news-item h3 {
   color: var(--gold);
-  font-size: 17px;
+  font-size: 20px;
   margin-bottom: 6px;
 }
 
-.player-info p {
-  color: #ccc;
-  font-size: 14px;
-}
-
-.player-card:hover .player-info {
-  bottom: 0;
-}
-
-/* O NÁS */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-text {
-  font-size: 16px;
+.news-item p {
   color: #ddd;
+  font-size: 17px;
 }
 
-.about-highlight {
-  color: var(--gold);
-  font-weight: 700;
-}
-
-.about-box {
-  background: rgba(10,10,16,0.9);
-  border-radius: 14px;
-  border: 2px solid var(--gold);
-  padding: 24px;
-  box-shadow: 0 0 22px rgba(212,175,55,0.35);
-}
-
-/* KONTAKT */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 40px;
-}
-
-.contact-info {
-  font-size: 16px;
-  color: #ddd;
-}
-
-.contact-info a {
-  color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact-info a:hover {
-  text-shadow: var(--glow-gold);
-}
-
-.contact-box {
-  background: rgba(10,10,16,0.9);
-  border-radius: 14px;
-  border: 2px solid var(--gold);
-  padding: 24px;
-  box-shadow: 0 0 22px rgba(212,175,55,0.35);
-}
-
-/* FOOTER */
+/* FOOTER – úplně dole */
 .footer {
   background: #050509;
   text-align: center;
-  padding: 22px;
+  padding: 30px;
   border-top: 2px solid var(--gold);
   box-shadow: 0 0 20px rgba(0,0,0,0.8);
-  margin-top: 40px;
+  margin-top: 120px;
 }
 
 .footer p {
-  font-size: 13px;
+  font-size: 14px;
   color: #ccc;
 }
 
