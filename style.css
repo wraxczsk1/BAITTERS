@@ -97,7 +97,7 @@ body {
 }
 
 /* HOME LAYOUT */
-.home-layout {
+.home-layout { hi
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: 80px;
