@@ -226,11 +226,18 @@ body {
   gap: 8px;
 }
 
+/* HEXAGON VLÁJKY */
 .flag {
-  width: 28px;
-  height: 20px;
-  border-radius: 3px;
-  box-shadow: var(--glow);
+  width: 34px;
+  height: 24px;
+  clip-path: polygon(
+    25% 0%, 75% 0%,
+    100% 50%,
+    75% 100%, 25% 100%,
+    0% 50%
+  );
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.7);
+  margin-top: 6px;
 }
 
 .player-info h3 {
@@ -293,6 +300,76 @@ body {
 .match-score.lose {
   background: #b30000;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* KONTAKT – SEKCE */
+.contact-section {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.contact-box {
+  background: #0d0d12;
+  padding: 25px;
+  border: 2px solid var(--red);
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(255, 40, 40, 0.3);
+}
+
+.contact-box h3 {
+  color: var(--red);
+  text-shadow: var(--glow);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* KONTAKT – TLAČÍTKA */
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--red);
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  margin-top: 12px;
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.6);
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ff4444;
+  box-shadow: 0 0 25px rgba(255, 40, 40, 0.9);
+}
+
+.contact-btn img {
+  width: 26px;
+  height: 26px;
+}
+
+/* KONTAKT – FORMULÁŘ */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 2px solid var(--red);
+  background: #0a0a0d;
+  color: white;
+  font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 40, 40, 0.7);
 }
 
 /* FOOTER */
