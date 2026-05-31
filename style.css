@@ -89,7 +89,7 @@ body {
   width: 100%;
 }
 
-/* ÚVODNÍ SEKCE (VÍTEJ NA BAITTERS) */
+/* SEKCE */
 .section {
   width: 100%;
   padding: 80px 50px;
@@ -147,47 +147,62 @@ body {
   box-shadow: var(--glow-gold);
 }
 
-/* NOVINKY */
-.news-box {
+/* HOME LAYOUT – NOVINKY VLEVO + WELCOME VPRAVO */
+.home-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* NOVINKY BOX */
+.home-news-box {
   background: #0d0d12;
   border: 2px solid var(--gold);
   padding: 20px;
-  margin-bottom: 25px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(212,175,55,0.3);
 }
 
-.news-box h3 {
+.news-title {
   color: var(--gold);
-  margin-bottom: 8px;
-  font-size: 22px;
-  text-shadow: var(--glow-gold);
-}
-
-.news-box p {
-  color: #ccc;
-  font-size: 18px;
-}
-
-/* FOOTER */
-.footer {
-  background: #0b0b0f;
+  font-size: 26px;
+  margin-bottom: 15px;
   text-align: center;
-  padding: 25px;
-  border-top: 3px solid var(--gold);
-  box-shadow: 0 0 20px rgba(212,175,55,0.3);
 }
 
-.footer a {
+.news-item {
+  background: #111116;
+  border-left: 3px solid var(--gold);
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.news-item h3 {
   color: var(--gold);
-  text-decoration: none;
-  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
-.footer a:hover {
-  text-shadow: var(--glow-gold);
+.news-item p {
+  color: #ccc;
+  font-size: 14px;
 }
 
+/* WELCOME TEXT */
+.home-welcome {
+  text-align: center;
+}
+
+.home-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* TÝM – MALÉ BOXY */
 .team-row-small {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -247,3 +262,21 @@ body {
   bottom: 0;
 }
 
+/* FOOTER */
+.footer {
+  background: #0b0b0f;
+  text-align: center;
+  padding: 25px;
+  border-top: 3px solid var(--gold);
+  box-shadow: 0 0 20px rgba(212,175,55,0.3);
+}
+
+.footer a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-shadow: var(--glow-gold);
+}
