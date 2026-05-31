@@ -215,6 +215,74 @@ body {
   box-shadow: var(--glow-gold);
 }
 
+/* TÝM – OPRAVENÉ, MENŠÍ, MODERNÍ */
+.team-title {
+  text-align: center;
+  font-size: 55px;
+  font-weight: 900;
+  color: var(--gold);
+  text-shadow: var(--glow-gold);
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.player-card {
+  position: relative;
+  width: 160px;
+  height: 190px;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d12;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(212,175,55,0.2);
+}
+
+.player-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(212,175,55,0.6);
+}
+
+.player-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10,10,10,0.92);
+  border-top: 2px solid var(--gold);
+  padding: 15px;
+  text-align: center;
+  transition: 0.35s ease-in-out;
+}
+
+.player-info h3 {
+  color: var(--gold);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.player-info p {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.player-card:hover .player-info {
+  bottom: 0;
+}
+
 /* FOOTER */
 .footer {
   background: #0b0b0f;
