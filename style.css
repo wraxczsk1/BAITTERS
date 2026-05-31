@@ -53,3 +53,10 @@
   background: #b30000;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
+
+/* LOGO V TEXTOVÉM BLOKU (stejné jako O NÁS) */
+.onas-logo {
+  width: 140px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 15px rgba(255, 40, 40, 0.7));
+}
