@@ -85,33 +85,56 @@ body {
   width: 100%;
 }
 
-/* HERO */
-.hero-section {
-  padding: 100px 40px;
-  text-align: center;
-  background: linear-gradient(135deg, #0a0a0d 0%, #1a0d0d 100%);
-  box-shadow: inset 0 0 80px rgba(212,175,55,0.2);
+/* SEKCE */
+.section {
+  width: 100%;
+  padding: 80px 50px;
 }
 
-.hero-title {
-  font-size: 70px;
+.section-title {
+  font-size: 48px;
   font-weight: 900;
   color: var(--gold);
   text-shadow: var(--glow-gold);
-  letter-spacing: 4px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.hero-subtitle {
-  font-size: 22px;
+/* FULL-WIDTH BLOKY */
+.block-dark {
+  background: #0a0a0d;
+}
+
+.block-darker {
+  background: #08080a;
+}
+
+.block-red {
+  background: #1a0d0d;
+  box-shadow: inset 0 0 80px rgba(255, 40, 40, 0.2);
+}
+
+.block-gold {
+  background: #1a1505;
+  box-shadow: inset 0 0 80px rgba(212,175,55,0.2);
+}
+
+/* TEXT */
+.text-center {
+  text-align: center;
+}
+
+.text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 20px;
   color: #ccc;
-  margin-top: 10px;
-  margin-bottom: 30px;
 }
 
 /* TLAČÍTKA */
 .btn-red {
   background: var(--red);
-  padding: 12px 25px;
+  padding: 14px 28px;
   color: white;
   text-decoration: none;
   font-weight: 700;
@@ -127,7 +150,7 @@ body {
 
 .btn-outline {
   border: 2px solid var(--gold);
-  padding: 12px 25px;
+  padding: 14px 28px;
   color: var(--gold);
   text-decoration: none;
   font-weight: 700;
@@ -139,168 +162,6 @@ body {
   background: var(--gold);
   color: black;
   box-shadow: var(--glow-gold);
-}
-
-/* HLAVNÍ OBSAH */
-.main-content {
-  padding: 50px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* NADPISY */
-.section-title,
-.onas-heading {
-  font-size: 42px;
-  color: var(--gold);
-  text-shadow: var(--glow-gold);
-  margin-bottom: 20px;
-}
-
-/* NOVINKY */
-.news-box {
-  background: #0d0d12;
-  border: 2px solid var(--gold);
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(212,175,55,0.3);
-}
-
-.news-box h3 {
-  color: var(--gold);
-  margin-bottom: 8px;
-  text-shadow: var(--glow-gold);
-}
-
-.news-box p {
-  color: #ccc;
-}
-
-/* O NÁS */
-.onas-text {
-  color: #ccc;
-  margin-bottom: 30px;
-  font-size: 18px;
-}
-
-.onas-list {
-  color: #ccc;
-  font-size: 18px;
-  list-style: none;
-  padding-left: 0;
-}
-
-/* TÝM */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 35px;
-  margin-top: 40px;
-  justify-items: center;
-}
-
-.player-card {
-  width: 240px;
-  background: #0d0d12;
-  border: 2px solid var(--gold);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(212,175,55,0.3);
-}
-
-.player-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 25px rgba(212,175,55,0.7);
-}
-
-.player-icon {
-  width: 50px;
-  height: 34px;
-  margin: 15px auto 0 auto;
-  display: block;
-  border-radius: 4px;
-  object-fit: cover;
-  box-shadow: var(--glow-gold);
-}
-
-.name-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.flag {
-  width: 28px;
-  height: 20px;
-  border-radius: 3px;
-  object-fit: cover;
-  box-shadow: var(--glow-gold);
-}
-
-.player-info {
-  padding: 18px;
-  background: #0a0a0d;
-  border-top: 2px solid var(--gold);
-}
-
-.player-info h3 {
-  margin: 0;
-  color: var(--gold);
-  font-size: 22px;
-  text-shadow: var(--glow-gold);
-}
-
-.player-info p {
-  margin-top: 5px;
-  color: #ccc;
-  font-size: 16px;
-}
-
-/* ZÁPASY */
-.match-box {
-  background: #0d0d12;
-  border: 2px solid var(--gold);
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(212,175,55,0.3);
-  transition: 0.3s;
-}
-
-.match-box:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(212,175,55,0.6);
-}
-
-.match-box h3 {
-  color: var(--gold);
-  text-shadow: var(--glow-gold);
-}
-
-.match-box p {
-  color: #ccc;
-}
-
-.match-score {
-  font-size: 26px;
-  font-weight: 900;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: white;
-  float: right;
-}
-
-.match-score.win {
-  background: #1fa83d;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-}
-
-.match-score.lose {
-  background: #b30000;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
 }
 
 /* FOOTER */
@@ -320,23 +181,4 @@ body {
 
 .footer a:hover {
   text-shadow: var(--glow-gold);
-}
-
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
