@@ -155,6 +155,20 @@ body {
   font-size: 15px;
 }
 
+/* JMÉNO + VLAJKA VEDLE SEBE */
+.name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.flag {
+  width: 26px;
+  height: 18px;
+  border-radius: 3px;
+}
+
 /* FOOTER */
 .footer {
   background: #0d0d12;
