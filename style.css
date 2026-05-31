@@ -99,7 +99,7 @@ body {
 /* HOME LAYOUT */
 .home-layout {
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 450px 1fr;
   gap: 80px;
   align-items: center;
   justify-content: center;
@@ -109,16 +109,16 @@ body {
 .home-news-box {
   background: rgba(10, 10, 10, 0.75);
   border: 2px solid var(--gold);
-  padding: 35px;
+  padding: 40px;
   border-radius: 14px;
   box-shadow: 0 0 25px rgba(212,175,55,0.35);
   backdrop-filter: blur(4px);
-  width: 420px;
+  width: 450px;
 }
 
 .news-title {
   color: var(--gold);
-  font-size: 34px;
+  font-size: 36px;
   margin-bottom: 25px;
   text-align: center;
   text-shadow: var(--glow-gold);
@@ -127,8 +127,8 @@ body {
 .news-item {
   background: rgba(20, 20, 20, 0.85);
   border-left: 4px solid var(--red);
-  padding: 16px 20px;
-  margin-bottom: 20px;
+  padding: 18px 22px;
+  margin-bottom: 22px;
   border-radius: 8px;
   transition: 0.25s;
 }
@@ -140,24 +140,29 @@ body {
 
 .news-item h3 {
   color: var(--gold);
-  font-size: 19px;
+  font-size: 20px;
   margin-bottom: 6px;
 }
 
 .news-item p {
   color: #ddd;
-  font-size: 16px;
+  font-size: 17px;
 }
 
-/* WELCOME BLOK */
+/* WELCOME BLOK – PERFEKTNĚ UPROSTŘED */
 .home-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  height: 100%;
   max-width: 650px;
   margin: 0 auto;
 }
 
 .welcome-title {
-  font-size: 65px;
+  font-size: 70px;
   font-weight: 900;
   color: var(--gold);
   text-shadow: var(--glow-gold);
@@ -165,9 +170,10 @@ body {
 }
 
 .welcome-text {
-  font-size: 24px;
+  font-size: 26px;
   color: #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  max-width: 600px;
 }
 
 .home-buttons {
