@@ -495,3 +495,57 @@ body {
     padding-block: 90px 60px;
   }
 }
+
+/* ZÁPASY – STEJNÝ STYL JAKO NOVINY, ALE VĚTŠÍ */
+.match-item {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 22px 24px;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 18px;
+  transition: 0.22s;
+}
+
+.match-item:hover {
+  border-color: var(--red);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+  transform: translateY(-2px);
+}
+
+.match-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-team {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.match-score {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+/* BARVY SKÓRE */
+.match-score.win {
+  color: #4cff4c;
+  text-shadow: 0 0 12px rgba(0, 255, 0, 0.6);
+}
+
+.match-score.loss {
+  color: #ff3b3b;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+.match-info {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
