@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAITTERS ESPORTS - Zápasy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+  <div class="logo-box">
+    <img src="1.png" alt="BAITTERS Logo">
+  </div>
+  <div class="title-box">
+    <h1>BAITTERS</h1>
+    <p>CZ/SK ESPORT ORGANIZACE</p>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="index.html">HOME</a>
+  <a href="onas.html">O NÁS</a>
+  <a href="tym.html">NÁŠ TÝM</a>
+  <a href="zapasy.html" class="active">ZÁPASY</a>
+  <a href="partneri.html">PARTNEŘI</a>
+  <a href="galerie.html">GALERIE</a>
+  <a href="kontakt.html">KONTAKT</a>
+</nav>
+
+<!-- HERO SEKCE -->
 <section class="hero-section">
   <div class="hero-content">
     <h2 class="hero-big">Zápasy</h2>
@@ -5,6 +36,7 @@
   </div>
 </section>
 
+<!-- HLAVNÍ OBSAH -->
 <section class="main-content">
 
   <!-- Nadcházející zápasy -->
@@ -43,8 +75,15 @@
     </table>
   </div>
 
+</section>
 
-  <script>
+<footer class="footer">
+  <p>&copy; 2025 BAITTERS. Všechna práva vyhrazena.</p>
+  <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
+</footer>
+
+<!-- AUTOMATICKÉ NAČÍTÁNÍ ZÁPASŮ -->
+<script>
 fetch("matches.json")
   .then(response => response.json())
   .then(data => {
@@ -84,5 +123,5 @@ fetch("matches.json")
   });
 </script>
 
-
-</section>
+</body>
+</html>
