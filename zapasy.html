@@ -1,127 +1,34 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BAITTERS ESPORTS - Zápasy</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header class="top-header">
-  <div class="logo-box">
-    <img src="1.png" alt="BAITTERS Logo">
-  </div>
-  <div class="title-box">
-    <h1>BAITTERS</h1>
-    <p>CZ/SK ESPORT ORGANIZACE</p>
-  </div>
-</header>
-
-<nav class="nav">
-  <a href="index.html">HOME</a>
-  <a href="onas.html">O NÁS</a>
-  <a href="tym.html">NÁŠ TÝM</a>
-  <a href="zapasy.html" class="active">ZÁPASY</a>
-  <a href="partneri.html">PARTNEŘI</a>
-  <a href="galerie.html">GALERIE</a>
-  <a href="kontakt.html">KONTAKT</a>
-</nav>
-
-<!-- HERO SEKCE -->
-<section class="hero-section">
-  <div class="hero-content">
-    <h2 class="hero-big">Zápasy</h2>
-    <p>Výsledky, statistiky a nadcházející utkání BAITTERS</p>
-  </div>
-</section>
-
-<!-- HLAVNÍ OBSAH -->
 <section class="main-content">
 
-  <!-- Nadcházející zápasy -->
-  <div class="content-box">
-    <h3>Nadcházející zápasy</h3>
+  <h2 class="hero-big" style="font-size:42px; text-align:center; margin-bottom:30px;">
+    ZÁPASY
+  </h2>
 
-    <table class="matches-table">
-      <thead>
-        <tr>
-          <th>Datum</th>
-          <th>Soupeř</th>
-          <th>Typ zápasu</th>
-          <th>Stav</th>
-          <th>Poznámka</th>
-        </tr>
-      </thead>
-      <tbody id="upcoming-matches"></tbody>
-    </table>
+  <div class="match-box">
+    <img src="1.png" class="match-logo">
+    <div class="match-info">
+      <h3>BAITTERS vs MCB Fast Cup</h3>
+      <p>23. 5. 2026 • 20:00 • Dust2</p>
+    </div>
+    <div class="match-score win">13 : 7</div>
   </div>
 
-  <!-- Poslední zápasy -->
-  <div class="content-box">
-    <h3>Poslední zápasy</h3>
+  <div class="match-box">
+    <img src="1.png" class="match-logo">
+    <div class="match-info">
+      <h3>BAITTERS vs MCB Fast Cup</h3>
+      <p>21. 5. 2026 • 20:03 • Nuke</p>
+    </div>
+    <div class="match-score lose">10 : 13</div>
+  </div>
 
-    <table class="matches-table">
-      <thead>
-        <tr>
-          <th>Datum</th>
-          <th>Soupeř</th>
-          <th>Typ zápasu</th>
-          <th>Skóre</th>
-          <th>Poznámka</th>
-        </tr>
-      </thead>
-      <tbody id="finished-matches"></tbody>
-    </table>
+  <div class="match-box">
+    <img src="1.png" class="match-logo">
+    <div class="match-info">
+      <h3>BAITTERS vs ESEA Open10 - Season 57</h3>
+      <p>13. 5. 2026 • 21:50 • Anubis</p>
+    </div>
+    <div class="match-score win">16 : 14</div>
   </div>
 
 </section>
-
-<footer class="footer">
-  <p>&copy; 2025 BAITTERS. Všechna práva vyhrazena.</p>
-  <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
-</footer>
-
-<!-- AUTOMATICKÉ NAČÍTÁNÍ ZÁPASŮ -->
-<script>
-fetch("matches.json")
-  .then(response => response.json())
-  .then(data => {
-    
-    // Nadcházející zápasy
-    const upcomingTable = document.getElementById("upcoming-matches");
-    data.upcoming.forEach(match => {
-      upcomingTable.innerHTML += `
-        <tr>
-          <td>${match.date}</td>
-          <td>${match.opponent}</td>
-          <td>${match.type}</td>
-          <td>${match.status}</td>
-          <td>${match.note}</td>
-        </tr>
-      `;
-    });
-
-    // Poslední zápasy
-    const finishedTable = document.getElementById("finished-matches");
-    data.finished.forEach(match => {
-      const scoreClass = match.score.split(":")[0] > match.score.split(":")[1]
-        ? "score-win"
-        : "score-loss";
-
-      finishedTable.innerHTML += `
-        <tr>
-          <td>${match.date}</td>
-          <td>${match.opponent}</td>
-          <td>${match.type}</td>
-          <td><span class="${scoreClass}">${match.score}</span></td>
-          <td>${match.note}</td>
-        </tr>
-      `;
-    });
-
-  });
-</script>
-
-</body>
-</html>
