@@ -450,7 +450,7 @@ body {
   color: var(--text-muted);
 }
 
-/* === NOVÝ PROFESIONÁLNÍ FOOTER — VEDLE SEBE === */
+/* === FOOTER === */
 
 .footer {
   background: #000;
@@ -467,28 +467,61 @@ body {
   opacity: 0.9;
 }
 
-/* SOCIAL IKONY */
-.footer-social {
-  margin-bottom: 40px;
-}
+/* SOCIAL IKONY — ODSTRANĚNY */
 
-.footer-social img {
-  width: 26px;
-  margin: 0 10px;
-  opacity: 0.75;
-  transition: 0.2s;
-}
-
-.footer-social img:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-
-/* SLOUPCE — VEDLE SEBE */
+/* SLOUPCE */
 .footer-columns {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: nowrap;
-  gap: 80px;
-  margin-bottom:
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.footer-col {
+  text-align: left;
+  min-width: 150px;
+}
+
+.footer-col h3 {
+  color: var(--red);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  margin: 6px 0;
+}
+
+/* BUTTON ODKAZY */
+.footer-col p a,
+.footer-bottom a {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 39, 64, 0.12);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-col p a:hover,
+.footer-bottom a:hover {
+  background: var(--red);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 39, 64, 0.6);
+}
+
+/* SPODNÍ ČÁST */
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom
