@@ -450,28 +450,84 @@ body {
   color: var(--text-muted);
 }
 
-/* FOOTER */
+/* === NOVÝ PROFESIONÁLNÍ FOOTER === */
+
 .footer {
-  background: #050509;
-  text-align: center;
-  padding: 22px 7vw 26px 7vw;
+  background: #000;
+  padding: 50px 7vw;
+  margin-top: 60px;
   border-top: 1px solid var(--border-soft);
-  margin-top: 40px;
+  text-align: center;
 }
 
-.footer p {
+/* SOCIAL IKONY */
+.footer-social {
+  margin-bottom: 35px;
+}
+
+.footer-social img {
+  width: 28px;
+  margin: 0 10px;
+  opacity: 0.75;
+  transition: 0.2s;
+}
+
+.footer-social img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* SLOUPCE */
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-col h3 {
+  color: var(--red);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+/* SPODNÍ ČÁST */
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
   font-size: 12px;
   color: var(--text-muted);
+  margin: 4px 0;
 }
 
-.footer a {
+.footer-bottom a {
   color: var(--red);
   text-decoration: none;
   font-weight: 600;
 }
 
-.footer a:hover {
+.footer-bottom a:hover {
   text-decoration: underline;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 700px) {
+  .footer-columns {
+    gap: 30px;
+  }
 }
 
 /* RESPONSIVE */
