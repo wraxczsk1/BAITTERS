@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>BAITTERS – Turnaje</title>
+  <title>BAITTERS CUP – Turnaj</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,86 +25,121 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero hero-cup">
   <div class="hero-content">
-    <h1><span>BAITTERS TOURNAMENTS</span></h1>
-    <p>Vyber si turnaj a sestav svůj pick’em.</p>
+    <h1><span>BAITTERS CUP</span></h1>
+    <p>Oficiální turnaje organizace BAITTERS.</p>
   </div>
 </section>
 
 <!-- TURNOVÉ BANNERY -->
 <div class="tournaments-wrapper">
 
+  <!-- BAITTERS CUP -->
   <div class="tournament-banner">
     <div class="tournament-left">
-      <div class="tournament-icon">CP</div>
+      <div class="tournament-icon">BC</div>
       <div class="tournament-text">
-        <h3>COMPLAY</h3>
-        <p>Pick’em pro turnaj COMPLAY.</p>
+        <h3>BAITTERS CUP</h3>
+        <p>Hlavní CS2 turnaj organizace BAITTERS.</p>
       </div>
     </div>
-    <button class="tournament-btn" data-open="complay">Otevřít pick'em</button>
+
+    <button class="tournament-btn" data-open="baitterscup">
+      OTEVŘÍT PICK'EM
+    </button>
   </div>
 
+  <!-- COMMUNITY -->
   <div class="tournament-banner">
     <div class="tournament-left">
-      <div class="tournament-icon">PZ</div>
+      <div class="tournament-icon">CO</div>
       <div class="tournament-text">
-        <h3>PLAYZONE</h3>
-        <p>Pick’em pro PLAYZONE turnaj.</p>
+        <h3>COMMUNITY SHOWDOWN</h3>
+        <p>Turnaj pro komunitu a fanoušky.</p>
       </div>
     </div>
-    <button class="tournament-btn" data-open="playzone">Otevřít pick'em</button>
+
+    <button class="tournament-btn" disabled>
+      JIŽ BRZY
+    </button>
   </div>
 
+  <!-- LEADERBOARD -->
   <div class="tournament-banner">
     <div class="tournament-left">
-      <div class="tournament-icon">MČB</div>
+      <div class="tournament-icon">LB</div>
       <div class="tournament-text">
-        <h3>MČB</h3>
-        <p>Pick’em pro MČB turnaj.</p>
+        <h3>LEADERBOARD</h3>
+        <p>Žebříček nejlepších pick'em hráčů.</p>
       </div>
     </div>
-    <button class="tournament-btn" data-open="mcb">Otevřít pick'em</button>
+
+    <button class="tournament-btn" disabled>
+      JIŽ BRZY
+    </button>
   </div>
 
 </div>
 
-<!-- PICK'EM BOX ŠABLONA -->
-<section id="pickem-template" style="display:none;">
-  <div class="pickem-box">
+<!-- PICK'EM SEKCE -->
+<section id="pickem-section" style="display:none;">
 
-    <h2 class="pickem-title"></h2>
+  <div class="pickem-title">BAITTERS CUP – PICK'EM</div>
 
-    <table class="pickem-table">
-      <tr>
-        <th>3‑0</th>
-        <th>Postupující</th>
-        <th>0‑3</th>
-      </tr>
-      <tr>
-        <td class="pickem-slot" data-slot="3-0"></td>
-        <td class="pickem-slot" data-slot="adv"></td>
-        <td class="pickem-slot" data-slot="0-3"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="pickem-slot" data-slot="adv"></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="pickem-slot" data-slot="adv"></td>
-        <td></td>
-      </tr>
-    </table>
+  <table class="pickem-table">
+    <tr>
+      <th>3‑0</th>
+      <th>Postupující</th>
+      <th>0‑3</th>
+    </tr>
+    <tr>
+      <td id="slot-3-0-1"></td>
+      <td id="slot-adv-1"></td>
+      <td id="slot-0-3-1"></td>
+    </tr>
+    <tr>
+      <td id="slot-3-0-2"></td>
+      <td id="slot-adv-2"></td>
+      <td id="slot-0-3-2"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td id="slot-adv-3"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td id="slot-adv-4"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td id="slot-adv-5"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td id="slot-adv-6"></td>
+      <td></td>
+    </tr>
+  </table>
 
-    <div class="team-list"></div>
-
-    <button class="save-btn">ULOŽIT PICK'EM</button>
-    <div class="msg"></div>
-
+  <!-- TÝMY -->
+  <div class="team-list">
+    <div class="team-btn" data-team="GamerLegion">GamerLegion</div>
+    <div class="team-btn" data-team="NRG">NRG</div>
+    <div class="team-btn" data-team="Sharks">Sharks</div>
+    <div class="team-btn" data-team="BetBoom">BetBoom</div>
+    <div class="team-btn" data-team="M80">M80</div>
+    <div class="team-btn" data-team="FlyQuest">FlyQuest</div>
+    <div class="team-btn" data-team="SINNERS">SINNERS</div>
+    <div class="team-btn" data-team="BIG">BIG</div>
   </div>
+
+  <button class="save-btn" id="save">ULOŽIT PICK'EM</button>
+  <div class="msg" id="msg"></div>
+
 </section>
 
 <!-- FOOTER -->
@@ -118,133 +153,54 @@
 </footer>
 
 <script>
-/* TÝMY PRO VŠECHNY TURNAJE */
-const TEAMS = ["SINNERS", "ENTERPRISE", "Dynamo Eclot", "Cryptova"];
-
-/* OTEVŘENÍ PICK'EM */
-document.querySelectorAll(".tournament-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const id = btn.dataset.open;
-    openPickem(id);
-  });
-});
-
-function openPickem(id) {
-  const template = document.getElementById("pickem-template");
-  template.style.display = "block";
-
-  template.querySelector(".pickem-title").textContent =
-    id.toUpperCase() + " – PICK'EM";
-
-  const teamList = template.querySelector(".team-list");
-  teamList.innerHTML = "";
-  TEAMS.forEach(t => {
-    const div = document.createElement("div");
-    div.className = "team-btn";
-    div.draggable = true;
-    div.textContent = t;
-    teamList.appendChild(div);
+  // otevření pick’em
+  document.querySelectorAll(".tournament-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.open === "baitterscup") {
+        const sec = document.getElementById("pickem-section");
+        sec.style.display = "block";
+        window.scrollTo({ top: sec.offsetTop - 20, behavior: "smooth" });
+      }
+    });
   });
 
-  initPickem(template, id);
-  window.scrollTo({ top: template.offsetTop - 20, behavior: "smooth" });
-}
+  // pick’em logika
+  const slots = document.querySelectorAll("td[id]");
+  const teams = document.querySelectorAll(".team-btn");
+  const msg = document.getElementById("msg");
 
-/* PICK'EM LOGIKA */
-function initPickem(section, key) {
-  let dragged = null;
+  teams.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const team = btn.dataset.team;
 
-  const slots = section.querySelectorAll(".pickem-slot");
-  const pool = section.querySelector(".team-list");
-  const msg = section.querySelector(".msg");
-  const saveBtn = section.querySelector(".save-btn");
+      // zabrání duplikaci
+      for (let slot of slots) {
+        if (slot.textContent.trim() === team) return;
+      }
 
-  function attachDrag(btn) {
-    btn.addEventListener("dragstart", () => {
-      dragged = btn;
-      btn.classList.add("dragging");
+      // najdi první prázdné místo
+      for (let slot of slots) {
+        if (slot.textContent.trim() === "") {
+          slot.textContent = team;
+          return;
+        }
+      }
     });
-    btn.addEventListener("dragend", () => {
-      btn.classList.remove("dragging");
-      dragged = null;
-    });
-  }
+  });
 
-  section.querySelectorAll(".team-btn").forEach(attachDrag);
-
+  // kliknutím smažeš slot
   slots.forEach(slot => {
-    slot.addEventListener("dragover", e => {
-      e.preventDefault();
-      slot.classList.add("drag-over");
-    });
-
-    slot.addEventListener("dragleave", () => {
-      slot.classList.remove("drag-over");
-    });
-
-    slot.addEventListener("drop", () => {
-      slot.classList.remove("drag-over");
-      if (!dragged) return;
-
-      for (let s of slots) {
-        if (s.textContent.trim() === dragged.textContent.trim()) return;
-      }
-
-      if (slot.textContent.trim() !== "") {
-        const old = document.createElement("div");
-        old.className = "team-btn";
-        old.draggable = true;
-        old.textContent = slot.textContent.trim();
-        pool.appendChild(old);
-        attachDrag(old);
-      }
-
-      slot.textContent = dragged.textContent.trim();
-      dragged.remove();
-    });
-
     slot.addEventListener("click", () => {
-      if (slot.textContent.trim() !== "") {
-        const old = document.createElement("div");
-        old.className = "team-btn";
-        old.draggable = true;
-        old.textContent = slot.textContent.trim();
-        pool.appendChild(old);
-        attachDrag(old);
-        slot.textContent = "";
-      }
+      slot.textContent = "";
     });
   });
 
-  /* ULOŽENÍ */
-  saveBtn.onclick = () => {
-    const data = {
-      slots: Array.from(slots).map(s => s.textContent.trim()),
-      pool: Array.from(pool.querySelectorAll(".team-btn")).map(b => b.textContent.trim())
-    };
-    localStorage.setItem("pickem-" + key, JSON.stringify(data));
-    msg.textContent = "Pick'em uložen!";
-    setTimeout(() => msg.textContent = "", 2500);
-  };
-
-  /* NAČTENÍ */
-  const saved = localStorage.getItem("pickem-" + key);
-  if (saved) {
-    const data = JSON.parse(saved);
-
-    slots.forEach((s, i) => s.textContent = data.slots[i] || "");
-    pool.innerHTML = "";
-
-    data.pool.forEach(name => {
-      const btn = document.createElement("div");
-      btn.className = "team-btn";
-      btn.draggable = true;
-      btn.textContent = name;
-      pool.appendChild(btn);
-      attachDrag(btn);
-    });
-  }
-}
+  document.getElementById("save").addEventListener("click", () => {
+    const data = {};
+    slots.forEach(slot => data[slot.id] = slot.textContent.trim());
+    msg.textContent = "Pick'em uložen (zatím jen lokálně).";
+    console.log("PICKEM DATA:", data);
+  });
 </script>
 
 </body>
