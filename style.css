@@ -36,28 +36,32 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.logo-box img {
-  height: 70px;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.title-box {
-  margin-left: 18px;
+.header-logo {
+  height: 48px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 39, 64, 0.4));
 }
 
-.title-box h1 {
-  font-size: 34px;
+.header-name {
+  font-size: 28px;
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-main);
+  text-shadow: 0 0 14px rgba(255, 39, 64, 0.5);
+  text-decoration: none;
+  transition: 0.2s;
 }
 
-.title-box p {
-  margin-top: 4px;
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--red-soft);
+.header-name:hover {
+  color: var(--red);
+  text-shadow: 0 0 18px rgba(255, 39, 64, 0.8);
 }
 
 /* NAVIGACE */
@@ -467,8 +471,6 @@ body {
   opacity: 0.9;
 }
 
-/* SOCIAL IKONY — ODSTRANĚNY */
-
 /* SLOUPCE */
 .footer-columns {
   display: flex;
@@ -522,6 +524,6 @@ body {
   border-top: 1px solid #222;
   padding-top: 20px;
   margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
 }
-
-.footer-bottom
