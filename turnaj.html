@@ -2,20 +2,97 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>BAITTERS CUP – Turnaj</title>
+  <title>BAITTERS CUP – Pick'em</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+/* PICKEM LAYOUT */
+.pickem-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.pickem-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.pickem-row h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--red);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.pickem-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.slot {
+  background: #0d0f18;
+  border: 1px dashed var(--border-soft);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  min-height: 80px;
+}
+
+/* TEAM LIST */
+.team-list {
+  margin-top: 40px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.team {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.team:hover {
+  border-color: var(--red);
+}
+
+.team img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.team p {
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+  </style>
 </head>
 <body>
 
-<!-- HLAVIČKA -->
 <header class="top-header">
   <div class="header-left">
-    <img src="1.png" class="header-logo" alt="BAITTERS Logo">
+    <img src="1.png" class="header-logo">
     <a href="index.html" class="header-name">BAITTERS</a>
   </div>
 </header>
 
-<!-- NAVIGACE -->
 <nav class="nav">
   <a href="index.html">Home</a>
   <a href="onas.html">O nás</a>
@@ -24,73 +101,104 @@
   <a href="turnaj.html" class="active">Turnaj</a>
 </nav>
 
-<!-- HERO – BAITTERS CUP -->
 <section class="hero hero-cup">
   <div class="hero-content">
-    <h1><span>BAITTERS CUP</span></h1>
-    <p>Oficiální turnaj organizace BAITTERS</p>
+    <h1><span>BAITTERS PICK'EM</span></h1>
+    <p>Vyber svůj 3‑0 tým, postupující a tým 0‑3.</p>
   </div>
 </section>
 
-<!-- OBSAH TURNaje -->
-<section class="section">
+<div class="pickem-container">
 
-  <div class="about-box">
-    <h3>Popis turnaje</h3>
-    <p>Zde můžeš psát cokoliv o turnaji…</p>
+  <!-- 3-0 -->
+  <div class="pickem-row">
+    <h2>3‑0 (2 místa)</h2>
+    <div class="pickem-slots">
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+    </div>
   </div>
 
-  <div class="about-box">
-    <h3>Zápasy</h3>
-    <p>Zde můžeš zapisovat výsledky…</p>
+  <!-- ADVANCE -->
+  <div class="pickem-row">
+    <h2>Postupující (6 míst)</h2>
+    <div class="pickem-slots">
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+    </div>
   </div>
 
-  <div class="about-box">
-    <h3>Informace</h3>
-    <p>Datum, čas, pravidla…</p>
+  <!-- 0-3 -->
+  <div class="pickem-row">
+    <h2>0‑3 (2 místa)</h2>
+    <div class="pickem-slots">
+      <div class="slot">Drop team here</div>
+      <div class="slot">Drop team here</div>
+    </div>
   </div>
 
-</section>
+  <!-- TEAM LIST -->
+  <div class="team-list">
+    <h2 class="news-title"><span>TÝMY</span></h2>
 
-<!-- FOOTER -->
+    <div class="team-grid">
+
+      <div class="team">
+        <img src="2.png">
+        <p>GamerLegion</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>NRG</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>Sharks</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>BetBoom</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>M80</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>FlyQuest</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>SINNERS</p>
+      </div>
+
+      <div class="team">
+        <img src="2.png">
+        <p>BIG</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 <footer class="footer">
-
   <div class="footer-logo">
-    <img src="1.png" alt="BAITTERS Logo">
+    <img src="1.png">
   </div>
-
-  <div class="footer-columns">
-
-    <div class="footer-col">
-      <h3>MEDIA</h3>
-      <p><a href="https://www.instagram.com/baitters_cs/" target="_blank">Instagram</a></p>
-      <p><a href="#">Partneři</a></p>
-      <p><a href="#">Press Kit</a></p>
-      <p><a href="#">Livestream Kit</a></p>
-    </div>
-
-    <div class="footer-col">
-      <h3>COMMUNITY</h3>
-      <p><a href="index.html">Home</a></p>
-      <p><a href="onas.html">O nás</a></p>
-      <p><a href="tym.html">Náš tým</a></p>
-      <p><a href="kontakt.html">Kontakt</a></p>
-    </div>
-
-    <div class="footer-col">
-      <h3>KONTAKT</h3>
-      <p><a href="#">BAITTERS ESPORT</a></p>
-      <p><a href="#">Česko / Slovensko</a></p>
-      <p><a href="#">IČO: 00000000</a></p>
-    </div>
-
-  </div>
-
   <div class="footer-bottom">
-    <p>Play Responsibly</p>
-    <p>© 2025 BAITTERS ESPORT. Všechna práva vyhrazena.</p>
+    <p>© 2025 BAITTERS ESPORT</p>
   </div>
-
 </footer>
 
 </body>
