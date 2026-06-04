@@ -308,6 +308,19 @@ body {
   transform: translateY(0);
 }
 
+/* CS2 MAIN – NADPIS + LOGO */
+.team-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs2-logo {
+  height: 42px;
+  width: auto;
+}
+
 /* O NÁS */
 .about-grid {
   display: grid;
