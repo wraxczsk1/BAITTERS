@@ -94,47 +94,47 @@
       <th>0‑3</th>
     </tr>
     <tr>
-      <td id="slot-3-0-1"></td>
-      <td id="slot-adv-1"></td>
-      <td id="slot-0-3-1"></td>
+      <td class="pickem-slot" data-slot="3-0"></td>
+      <td class="pickem-slot" data-slot="adv"></td>
+      <td class="pickem-slot" data-slot="0-3"></td>
     </tr>
     <tr>
-      <td id="slot-3-0-2"></td>
-      <td id="slot-adv-2"></td>
-      <td id="slot-0-3-2"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td id="slot-adv-3"></td>
-      <td></td>
+      <td class="pickem-slot" data-slot="3-0"></td>
+      <td class="pickem-slot" data-slot="adv"></td>
+      <td class="pickem-slot" data-slot="0-3"></td>
     </tr>
     <tr>
       <td></td>
-      <td id="slot-adv-4"></td>
+      <td class="pickem-slot" data-slot="adv"></td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-      <td id="slot-adv-5"></td>
+      <td class="pickem-slot" data-slot="adv"></td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-      <td id="slot-adv-6"></td>
+      <td class="pickem-slot" data-slot="adv"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="pickem-slot" data-slot="adv"></td>
       <td></td>
     </tr>
   </table>
 
   <!-- TÝMY -->
-  <div class="team-list">
-    <div class="team-btn" data-team="GamerLegion">GamerLegion</div>
-    <div class="team-btn" data-team="NRG">NRG</div>
-    <div class="team-btn" data-team="Sharks">Sharks</div>
-    <div class="team-btn" data-team="BetBoom">BetBoom</div>
-    <div class="team-btn" data-team="M80">M80</div>
-    <div class="team-btn" data-team="FlyQuest">FlyQuest</div>
-    <div class="team-btn" data-team="SINNERS">SINNERS</div>
-    <div class="team-btn" data-team="BIG">BIG</div>
+  <div class="team-list" id="team-pool">
+    <div class="team-btn" draggable="true">GamerLegion</div>
+    <div class="team-btn" draggable="true">NRG</div>
+    <div class="team-btn" draggable="true">Sharks</div>
+    <div class="team-btn" draggable="true">BetBoom</div>
+    <div class="team-btn" draggable="true">M80</div>
+    <div class="team-btn" draggable="true">FlyQuest</div>
+    <div class="team-btn" draggable="true">SINNERS</div>
+    <div class="team-btn" draggable="true">BIG</div>
   </div>
 
   <button class="save-btn" id="save">ULOŽIT PICK'EM</button>
@@ -153,54 +153,91 @@
 </footer>
 
 <script>
-  // otevření pick’em
-  document.querySelectorAll(".tournament-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (btn.dataset.open === "baitterscup") {
-        const sec = document.getElementById("pickem-section");
-        sec.style.display = "block";
-        window.scrollTo({ top: sec.offsetTop - 20, behavior: "smooth" });
-      }
-    });
+/* OTEVŘENÍ PICK'EM */
+document.querySelectorAll(".tournament-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (btn.dataset.open === "baitterscup") {
+      const sec = document.getElementById("pickem-section");
+      sec.style.display = "block";
+      window.scrollTo({ top: sec.offsetTop - 20, behavior: "smooth" });
+    }
+  });
+});
+
+/* DRAG & DROP PICK'EM */
+let dragged = null;
+
+document.querySelectorAll(".team-btn").forEach(btn => {
+  btn.addEventListener("dragstart", () => {
+    dragged = btn;
+    btn.classList.add("dragging");
   });
 
-  // pick’em logika
-  const slots = document.querySelectorAll("td[id]");
-  const teams = document.querySelectorAll(".team-btn");
-  const msg = document.getElementById("msg");
+  btn.addEventListener("dragend", () => {
+    btn.classList.remove("dragging");
+    dragged = null;
+  });
+});
 
-  teams.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const team = btn.dataset.team;
-
-      // zabrání duplikaci
-      for (let slot of slots) {
-        if (slot.textContent.trim() === team) return;
-      }
-
-      // najdi první prázdné místo
-      for (let slot of slots) {
-        if (slot.textContent.trim() === "") {
-          slot.textContent = team;
-          return;
-        }
-      }
-    });
+document.querySelectorAll(".pickem-slot").forEach(slot => {
+  slot.addEventListener("dragover", e => {
+    e.preventDefault();
+    slot.classList.add("drag-over");
   });
 
-  // kliknutím smažeš slot
-  slots.forEach(slot => {
-    slot.addEventListener("click", () => {
+  slot.addEventListener("dragleave", () => {
+    slot.classList.remove("drag-over");
+  });
+
+  slot.addEventListener("drop", () => {
+    slot.classList.remove("drag-over");
+
+    if (!dragged) return;
+
+    // zabrání duplikaci
+    const allSlots = document.querySelectorAll(".pickem-slot");
+    for (let s of allSlots) {
+      if (s.textContent.trim() === dragged.textContent.trim()) return;
+    }
+
+    // pokud slot už obsahuje tým → vrátit do poolu
+    if (slot.textContent.trim() !== "") {
+      const oldTeam = document.createElement("div");
+      oldTeam.className = "team-btn";
+      oldTeam.draggable = true;
+      oldTeam.textContent = slot.textContent.trim();
+      document.getElementById("team-pool").appendChild(oldTeam);
+    }
+
+    slot.textContent = dragged.textContent.trim();
+    dragged.remove();
+  });
+});
+
+/* KLIK – SMAZAT SLOT */
+document.querySelectorAll(".pickem-slot").forEach(slot => {
+  slot.addEventListener("click", () => {
+    if (slot.textContent.trim() !== "") {
+      const oldTeam = document.createElement("div");
+      oldTeam.className = "team-btn";
+      oldTeam.draggable = true;
+      oldTeam.textContent = slot.textContent.trim();
+      document.getElementById("team-pool").appendChild(oldTeam);
       slot.textContent = "";
-    });
+    }
+  });
+});
+
+/* ULOŽENÍ */
+document.getElementById("save").addEventListener("click", () => {
+  const data = {};
+  document.querySelectorAll(".pickem-slot").forEach((slot, i) => {
+    data["slot" + i] = slot.textContent.trim();
   });
 
-  document.getElementById("save").addEventListener("click", () => {
-    const data = {};
-    slots.forEach(slot => data[slot.id] = slot.textContent.trim());
-    msg.textContent = "Pick'em uložen (zatím jen lokálně).";
-    console.log("PICKEM DATA:", data);
-  });
+  document.getElementById("msg").textContent = "Pick'em uložen (zatím jen lokálně).";
+  console.log("PICKEM DATA:", data);
+});
 </script>
 
 </body>
