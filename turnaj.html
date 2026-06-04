@@ -4,167 +4,6 @@
   <meta charset="UTF-8">
   <title>BAITTERS CUP – Turnaj</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* BANNERY TURNAJŮ */
-    .tournaments-wrapper {
-      max-width: 900px;
-      margin: 40px auto 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .tournament-banner {
-      background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      border-radius: 14px;
-      padding: 18px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .tournament-banner:hover {
-      border-color: var(--red);
-      box-shadow: var(--glow-red);
-    }
-
-    .tournament-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .tournament-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: #151824;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--red);
-    }
-
-    .tournament-text h3 {
-      margin: 0;
-      font-size: 16px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .tournament-text p {
-      margin: 2px 0 0;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .tournament-right {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-    }
-
-    /* PICK'EM TABULKA */
-    #pickem-section {
-      max-width: 900px;
-      margin: 30px auto 60px;
-      display: none;
-    }
-
-    .pickem-title {
-      text-align: center;
-      margin-bottom: 18px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .pickem-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .pickem-table th {
-      background: #0d0f18;
-      padding: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--red);
-      font-size: 14px;
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .pickem-table td {
-      padding: 12px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-soft);
-      color: var(--text-main);
-      font-size: 15px;
-      min-height: 32px;
-    }
-
-    .team-list {
-      max-width: 900px;
-      margin: 30px auto 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 14px;
-    }
-
-    .team-btn {
-      background: var(--bg-card);
-      border: 1px solid var(--border-soft);
-      padding: 10px 12px;
-      border-radius: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.2s;
-      color: var(--text-main);
-      font-size: 14px;
-    }
-
-    .team-btn:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    .save-btn {
-      display: block;
-      margin: 24px auto 0;
-      padding: 10px 26px;
-      background: var(--red);
-      border: none;
-      border-radius: 999px;
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      letter-spacing: 0.1em;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    .save-btn:hover {
-      background: var(--red-soft);
-    }
-
-    .msg {
-      text-align: center;
-      margin-top: 8px;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-  </style>
 </head>
 <body>
 
@@ -185,7 +24,7 @@
   <a href="turnaj.html" class="active">Turnaj</a>
 </nav>
 
-<!-- HERO – BAITTERS CUP -->
+<!-- HERO -->
 <section class="hero hero-cup">
   <div class="hero-content">
     <h1><span>BAITTERS CUP</span></h1>
@@ -193,10 +32,11 @@
   </div>
 </section>
 
-<!-- BANNERY TURNAJŮ -->
+<!-- TURNOVÉ BANNERY -->
 <div class="tournaments-wrapper">
 
-  <div class="tournament-banner" data-tournament="baitterscup">
+  <!-- BAITTERS CUP -->
+  <div class="tournament-banner">
     <div class="tournament-left">
       <div class="tournament-icon">BC</div>
       <div class="tournament-text">
@@ -204,12 +44,14 @@
         <p>Hlavní CS2 turnaj organizace BAITTERS.</p>
       </div>
     </div>
-    <div class="tournament-right">
+
+    <button class="tournament-btn" data-open="baitterscup">
       OTEVŘÍT PICK'EM
-    </div>
+    </button>
   </div>
 
-  <div class="tournament-banner" data-tournament="community">
+  <!-- COMMUNITY -->
+  <div class="tournament-banner">
     <div class="tournament-left">
       <div class="tournament-icon">CO</div>
       <div class="tournament-text">
@@ -217,12 +59,14 @@
         <p>Turnaj pro komunitu a fanoušky.</p>
       </div>
     </div>
-    <div class="tournament-right">
+
+    <button class="tournament-btn" disabled>
       JIŽ BRZY
-    </div>
+    </button>
   </div>
 
-  <div class="tournament-banner" data-tournament="leaderboard">
+  <!-- LEADERBOARD -->
+  <div class="tournament-banner">
     <div class="tournament-left">
       <div class="tournament-icon">LB</div>
       <div class="tournament-text">
@@ -230,15 +74,16 @@
         <p>Žebříček nejlepších pick'em hráčů.</p>
       </div>
     </div>
-    <div class="tournament-right">
+
+    <button class="tournament-btn" disabled>
       JIŽ BRZY
-    </div>
+    </button>
   </div>
 
 </div>
 
-<!-- PICK'EM SEKCE PRO BAITTERS CUP -->
-<section id="pickem-section">
+<!-- PICK'EM SEKCE -->
+<section id="pickem-section" style="display:none;">
 
   <div class="pickem-title">BAITTERS CUP – PICK'EM</div>
 
@@ -302,54 +147,24 @@
   <div class="footer-logo">
     <img src="1.png" alt="BAITTERS Logo">
   </div>
-
-  <div class="footer-columns">
-
-    <div class="footer-col">
-      <h3>MEDIA</h3>
-      <p><a href="https://www.instagram.com/baitters_cs/" target="_blank">Instagram</a></p>
-      <p><a href="#">Partneři</a></p>
-      <p><a href="#">Press Kit</a></p>
-      <p><a href="#">Livestream Kit</a></p>
-    </div>
-
-    <div class="footer-col">
-      <h3>COMMUNITY</h3>
-      <p><a href="index.html">Home</a></p>
-      <p><a href="onas.html">O nás</a></p>
-      <p><a href="tym.html">Náš tým</a></p>
-      <p><a href="kontakt.html">Kontakt</a></p>
-    </div>
-
-    <div class="footer-col">
-      <h3>KONTAKT</h3>
-      <p><a href="#">BAITTERS ESPORT</a></p>
-      <p><a href="#">Česko / Slovensko</a></p>
-      <p><a href="#">IČO: 00000000</a></p>
-    </div>
-
-  </div>
-
   <div class="footer-bottom">
-    <p>Play Responsibly</p>
-    <p>© 2025 BAITTERS ESPORT. Všechna práva vyhrazena.</p>
+    <p>© 2025 BAITTERS ESPORT</p>
   </div>
-
 </footer>
 
 <script>
-  // otevření pick'em po kliknutí na BAITTERS CUP banner
-  document.querySelectorAll('.tournament-banner').forEach(banner => {
-    banner.addEventListener('click', () => {
-      const t = banner.dataset.tournament;
-      if (t === 'baitterscup') {
-        const sec = document.getElementById('pickem-section');
-        sec.style.display = 'block';
-        window.scrollTo({ top: sec.offsetTop - 20, behavior: 'smooth' });
+  // otevření pick’em
+  document.querySelectorAll(".tournament-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.dataset.open === "baitterscup") {
+        const sec = document.getElementById("pickem-section");
+        sec.style.display = "block";
+        window.scrollTo({ top: sec.offsetTop - 20, behavior: "smooth" });
       }
     });
   });
 
+  // pick’em logika
   const slots = document.querySelectorAll("td[id]");
   const teams = document.querySelectorAll(".team-btn");
   const msg = document.getElementById("msg");
@@ -358,7 +173,7 @@
     btn.addEventListener("click", () => {
       const team = btn.dataset.team;
 
-      // pokud už je tým někde v tabulce, nic nedělej
+      // zabrání duplikaci
       for (let slot of slots) {
         if (slot.textContent.trim() === team) return;
       }
@@ -373,7 +188,7 @@
     });
   });
 
-  // kliknutím na slot ho vymažeš
+  // kliknutím smažeš slot
   slots.forEach(slot => {
     slot.addEventListener("click", () => {
       slot.textContent = "";
@@ -382,12 +197,8 @@
 
   document.getElementById("save").addEventListener("click", () => {
     const data = {};
-
-    slots.forEach(slot => {
-      data[slot.id] = slot.textContent.trim();
-    });
-
-    msg.textContent = "Pick'em uložen (zatím jen lokálně v prohlížeči).";
+    slots.forEach(slot => data[slot.id] = slot.textContent.trim());
+    msg.textContent = "Pick'em uložen (zatím jen lokálně).";
     console.log("PICKEM DATA:", data);
   });
 </script>
