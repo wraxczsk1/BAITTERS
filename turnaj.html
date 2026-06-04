@@ -27,7 +27,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1><span>BAITTERS TURNAMENTS</span></h1>
+    <h1><span>BAITTERS TOURNAMENTS</span></h1>
     <p>Vyber si turnaj a sestav svůj pick’em.</p>
   </div>
 </section>
@@ -35,7 +35,6 @@
 <!-- TURNOVÉ BANNERY -->
 <div class="tournaments-wrapper">
 
-  <!-- MČB -->
   <div class="tournament-banner">
     <div class="tournament-left">
       <div class="tournament-icon">MČB</div>
@@ -47,7 +46,6 @@
     <button class="tournament-btn" data-open="mcb">Otevřít pick'em</button>
   </div>
 
-  <!-- PLAYZONE -->
   <div class="tournament-banner">
     <div class="tournament-left">
       <div class="tournament-icon">PZ</div>
@@ -59,7 +57,6 @@
     <button class="tournament-btn" data-open="playzone">Otevřít pick'em</button>
   </div>
 
-  <!-- COMPLAY -->
   <div class="tournament-banner">
     <div class="tournament-left">
       <div class="tournament-icon">CP</div>
@@ -73,37 +70,41 @@
 
 </div>
 
-<!-- PICK'EM ŠABLONA -->
+<!-- PICK'EM BOX ŠABLONA -->
 <section id="pickem-template" style="display:none;">
-  <h2 class="pickem-title"></h2>
+  <div class="pickem-box">
 
-  <table class="pickem-table">
-    <tr>
-      <th>3‑0</th>
-      <th>Postupující</th>
-      <th>0‑3</th>
-    </tr>
-    <tr>
-      <td class="pickem-slot" data-slot="3-0"></td>
-      <td class="pickem-slot" data-slot="adv"></td>
-      <td class="pickem-slot" data-slot="0-3"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="pickem-slot" data-slot="adv"></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="pickem-slot" data-slot="adv"></td>
-      <td></td>
-    </tr>
-  </table>
+    <h2 class="pickem-title"></h2>
 
-  <div class="team-list"></div>
+    <table class="pickem-table">
+      <tr>
+        <th>3‑0</th>
+        <th>Postupující</th>
+        <th>0‑3</th>
+      </tr>
+      <tr>
+        <td class="pickem-slot" data-slot="3-0"></td>
+        <td class="pickem-slot" data-slot="adv"></td>
+        <td class="pickem-slot" data-slot="0-3"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="pickem-slot" data-slot="adv"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="pickem-slot" data-slot="adv"></td>
+        <td></td>
+      </tr>
+    </table>
 
-  <button class="save-btn">ULOŽIT PICK'EM</button>
-  <div class="msg"></div>
+    <div class="team-list"></div>
+
+    <button class="save-btn">ULOŽIT PICK'EM</button>
+    <div class="msg"></div>
+
+  </div>
 </section>
 
 <!-- FOOTER -->
