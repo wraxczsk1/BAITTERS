@@ -5,90 +5,89 @@
   <title>BAITTERS CUP – Pick'em</title>
   <link rel="stylesheet" href="style.css">
   <style>
-
-/* PICKEM LAYOUT */
-.pickem-container {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 20px;
-}
-
-.pickem-row {
-  background: var(--bg-card);
-  border: 1px solid var(--border-soft);
-  border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 30px;
-}
-
-.pickem-row h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--red);
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.pickem-slots {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-}
-
-.slot {
-  background: #0d0f18;
-  border: 1px dashed var(--border-soft);
-  border-radius: 10px;
-  padding: 18px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 14px;
-  min-height: 80px;
-}
-
-/* TEAM LIST */
-.team-list {
-  margin-top: 40px;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-}
-
-.team {
-  background: var(--bg-card);
-  border: 1px solid var(--border-soft);
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-  transition: 0.2s;
-}
-
-.team:hover {
-  border-color: var(--red);
-}
-
-.team img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 8px;
-}
-
-.team p {
-  font-size: 14px;
-  color: var(--text-main);
-}
-
+    .pickem-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    .pickem-row {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .pickem-row h2 {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--red);
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    .pickem-slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+    .slot {
+      background: #0d0f18;
+      border: 1px dashed var(--border-soft);
+      border-radius: 10px;
+      padding: 18px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      min-height: 80px;
+    }
+    .slot.filled {
+      border-style: solid;
+    }
+    .team-list {
+      margin-top: 40px;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .team {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      transition: 0.2s;
+      cursor: grab;
+    }
+    .team:hover {
+      border-color: var(--red);
+    }
+    .team img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+    .team p {
+      font-size: 14px;
+      color: var(--text-main);
+    }
+    .pickem-actions {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .pickem-message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
 
 <header class="top-header">
   <div class="header-left">
-    <img src="1.png" class="header-logo">
+    <img src="1.png" class="header-logo" alt="BAITTERS Logo">
     <a href="index.html" class="header-name">BAITTERS</a>
   </div>
 </header>
@@ -111,33 +110,33 @@
 <div class="pickem-container">
 
   <!-- 3-0 -->
-  <div class="pickem-row">
+  <div class="pickem-row" data-group="threeZero" data-max="2">
     <h2>3‑0 (2 místa)</h2>
     <div class="pickem-slots">
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
+      <div class="slot" data-slot-group="threeZero"></div>
+      <div class="slot" data-slot-group="threeZero"></div>
     </div>
   </div>
 
   <!-- ADVANCE -->
-  <div class="pickem-row">
+  <div class="pickem-row" data-group="advance" data-max="6">
     <h2>Postupující (6 míst)</h2>
     <div class="pickem-slots">
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
+      <div class="slot" data-slot-group="advance"></div>
+      <div class="slot" data-slot-group="advance"></div>
+      <div class="slot" data-slot-group="advance"></div>
+      <div class="slot" data-slot-group="advance"></div>
+      <div class="slot" data-slot-group="advance"></div>
+      <div class="slot" data-slot-group="advance"></div>
     </div>
   </div>
 
   <!-- 0-3 -->
-  <div class="pickem-row">
+  <div class="pickem-row" data-group="zeroThree" data-max="2">
     <h2>0‑3 (2 místa)</h2>
     <div class="pickem-slots">
-      <div class="slot">Drop team here</div>
-      <div class="slot">Drop team here</div>
+      <div class="slot" data-slot-group="zeroThree"></div>
+      <div class="slot" data-slot-group="zeroThree"></div>
     </div>
   </div>
 
@@ -145,61 +144,185 @@
   <div class="team-list">
     <h2 class="news-title"><span>TÝMY</span></h2>
 
-    <div class="team-grid">
+    <div class="team-grid" id="team-pool">
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="gamerlegion">
+        <img src="2.png" alt="GamerLegion">
         <p>GamerLegion</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="nrg">
+        <img src="2.png" alt="NRG">
         <p>NRG</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="sharks">
+        <img src="2.png" alt="Sharks">
         <p>Sharks</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="betboom">
+        <img src="2.png" alt="BetBoom">
         <p>BetBoom</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="m80">
+        <img src="2.png" alt="M80">
         <p>M80</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="flyquest">
+        <img src="2.png" alt="FlyQuest">
         <p>FlyQuest</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="sinners">
+        <img src="2.png" alt="SINNERS">
         <p>SINNERS</p>
       </div>
 
-      <div class="team">
-        <img src="2.png">
+      <div class="team" draggable="true" data-team-id="big">
+        <img src="2.png" alt="BIG">
         <p>BIG</p>
       </div>
 
     </div>
   </div>
 
+  <div class="pickem-actions">
+    <button class="btn-red" id="save-picks">Uložit pick'em</button>
+    <div class="pickem-message" id="pickem-message"></div>
+  </div>
+
 </div>
 
 <footer class="footer">
   <div class="footer-logo">
-    <img src="1.png">
+    <img src="1.png" alt="BAITTERS Logo">
   </div>
   <div class="footer-bottom">
     <p>© 2025 BAITTERS ESPORT</p>
   </div>
 </footer>
+
+<script>
+  const teams = document.querySelectorAll('.team');
+  const slots = document.querySelectorAll('.slot');
+  const teamPool = document.getElementById('team-pool');
+  const saveBtn = document.getElementById('save-picks');
+  const msgEl = document.getElementById('pickem-message');
+
+  let draggedTeam = null;
+
+  teams.forEach(team => {
+    team.addEventListener('dragstart', e => {
+      draggedTeam = team;
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    team.addEventListener('dragend', () => {
+      draggedTeam = null;
+    });
+  });
+
+  function canDropIntoSlot(slot) {
+    // slot může mít jen jednoho potomka (team)
+    return !slot.querySelector('.team');
+  }
+
+  slots.forEach(slot => {
+    slot.addEventListener('dragover', e => {
+      if (!draggedTeam) return;
+      e.preventDefault();
+    });
+
+    slot.addEventListener('drop', e => {
+      e.preventDefault();
+      if (!draggedTeam) return;
+
+      const group = slot.dataset.slotGroup;
+      const row = document.querySelector(`.pickem-row[data-group="${group}"]`);
+      const max = parseInt(row.dataset.max, 10);
+
+      const currentInGroup = document.querySelectorAll(
+        `.slot[data-slot-group="${group}"] .team`
+      ).length;
+
+      // pokud už je plno, nedovolit
+      if (currentInGroup >= max && !slot.querySelector('.team')) {
+        return;
+      }
+
+      // pokud ve slotu už něco je, vrátit to do poolu
+      const existing = slot.querySelector('.team');
+      if (existing) {
+        teamPool.appendChild(existing);
+        existing.classList.remove('in-slot');
+      }
+
+      slot.appendChild(draggedTeam);
+      draggedTeam.classList.add('in-slot');
+      slot.classList.add('filled');
+    });
+  });
+
+  // umožnit drop zpět do poolu
+  teamPool.addEventListener('dragover', e => {
+    if (!draggedTeam) return;
+    e.preventDefault();
+  });
+
+  teamPool.addEventListener('drop', e => {
+    e.preventDefault();
+    if (!draggedTeam) return;
+    teamPool.appendChild(draggedTeam);
+    draggedTeam.classList.remove('in-slot');
+  });
+
+  function collectPicks() {
+    const result = {
+      threeZero: [],
+      advance: [],
+      zeroThree: []
+    };
+
+    document.querySelectorAll('.slot').forEach(slot => {
+      const team = slot.querySelector('.team');
+      if (!team) return;
+      const group = slot.dataset.slotGroup;
+      const id = team.dataset.teamId;
+      if (group === 'threeZero') result.threeZero.push(id);
+      if (group === 'advance') result.advance.push(id);
+      if (group === 'zeroThree') result.zeroThree.push(id);
+    });
+
+    return result;
+  }
+
+  saveBtn.addEventListener('click', async () => {
+    const picks = collectPicks();
+
+    msgEl.textContent = 'Ukládám pick\'em...';
+
+    try {
+      const res = await fetch('/api/picks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(picks)
+      });
+
+      if (!res.ok) {
+        throw new Error('Server vrátil chybu');
+      }
+
+      msgEl.textContent = 'Pick\'em byl úspěšně uložen.';
+    } catch (err) {
+      msgEl.textContent = 'Chyba při ukládání pick\'em. Zkus to znovu.';
+      console.error(err);
+    }
+  });
+</script>
 
 </body>
 </html>
