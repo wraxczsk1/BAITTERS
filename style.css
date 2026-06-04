@@ -153,13 +153,6 @@ body {
   margin-inline: auto;
 }
 
-.hero-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-}
-
 /* TLAČÍTKA */
 .btn-red {
   background: var(--red);
@@ -178,7 +171,6 @@ body {
 
 .btn-red:hover {
   background: #ff4b5f;
-  transform: translateY(-1px);
 }
 
 .btn-outline {
@@ -236,8 +228,6 @@ body {
 
 .news-item:hover {
   border-color: var(--red);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
-  transform: translateY(-2px);
 }
 
 .news-item h3 {
@@ -308,8 +298,6 @@ body {
 
 .player-card:hover {
   border-color: var(--red);
-  box-shadow: var(--glow-red);
-  transform: translateY(-3px);
 }
 
 .player-card:hover::before {
@@ -337,8 +325,6 @@ body {
 
 .about-box:hover {
   border-color: var(--red);
-  box-shadow: var(--glow-red);
-  transform: translateY(-2px);
 }
 
 .about-box h3 {
@@ -453,8 +439,6 @@ body {
 .footer-bottom a:hover {
   background: var(--red);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 0 12px rgba(255, 39, 64, 0.6);
 }
 
 .footer-bottom {
