@@ -1,272 +1,181 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turnaje – BAITTERS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>BAITTERS – Náš tým</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HLAVIČKA -->
+
+<!-- HLAVIČKA -->
 <header class="top-header">
   <div class="header-left">
     <img src="1.png" class="header-logo" alt="BAITTERS Logo">
     <a href="index.html" class="header-name">BAITTERS</a>
   </div>
 </header>
-    
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Title -->
-        <div class="section-title">BAITTERS <span class="highlight">TURNAJE</span></div>
+<!-- NAVIGACE -->
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="onas.html">O nás</a>
+  <a href="tym.html" class="active">Náš tým</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="turnaj.html">Turnaj</a>
+</nav>
 
-        <!-- Tournament Selector -->
-        <div class="tournament-selector">
-            <div class="tournament-card">
-                <div class="tournament-code">CP</div>
-                <div class="tournament-name">COMPLAY</div>
-                <div class="tournament-desc">Pick'em pro turnaj COMPLAY.</div>
-                <button class="tournament-btn" data-open="cp">Otevřít pick'em</button>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1><span>NÁŠ TÝM</span></h1>
+    <p>Oficiální sestava BAITTERS CS2 týmu.</p>
+  </div>
+</section>
 
-            <div class="tournament-card">
-                <div class="tournament-code">PZ</div>
-                <div class="tournament-name">PLAYZONE</div>
-                <div class="tournament-desc">Pick'em pro PLAYZONE turnaj.</div>
-                <button class="tournament-btn" data-open="pz">Otevřít pick'em</button>
-            </div>
+<!-- CS2 MAIN -->
+<section class="news-section">
 
-            <div class="tournament-card">
-                <div class="tournament-code">MČB</div>
-                <div class="tournament-name">MČB</div>
-                <div class="tournament-desc">Pick'em pro MČB turnaj.</div>
-                <button class="tournament-btn" data-open="mcb">Otevřít pick'em</button>
-            </div>
-        </div>
+  <h2 class="news-title team-title">
+    <span>CS2 MAIN</span>
+    <img src="cs2logo.png" alt="CS2 Logo" class="cs2-logo">
+  </h2>
 
-        <!-- Pick'em Template -->
-        <div id="pickem-template">
-            <!-- Header with Status -->
-            <div class="pickem-header">
-                <div class="pickem-title"></div>
-                <div class="status-badge">
-                    <span class="badge badge-active">ACTIVE</span>
-                    <span class="badge badge-locked">🔒 LOCKED</span>
-                </div>
-            </div>
+  <div class="team-grid">
 
-            <!-- Score Display -->
-            <div class="score-display">
-                <div class="score-item">
-                    <div class="score-label">Current Score</div>
-                    <div class="score-value">0 pts</div>
-                </div>
-                <div class="score-item">
-                    <div class="score-label">Potential</div>
-                    <div class="score-value">0 pts</div>
-                </div>
-            </div>
-
-            <!-- Scoring Note -->
-            <div class="score-note">Picks for this stage are locked.</div>
-
-            <!-- Bracket Tiers -->
-            <div class="bracket-container">
-                <!-- Winners Bracket (3-0) -->
-                <div class="bracket-tier">
-                    <div class="tier-header tier-win">
-                        <span style="color: #ff3333;">●</span> 3-0
-                    </div>
-                    <div class="bracket-slots">
-                        <div class="pickem-slot"></div>
-                        <div class="pickem-slot"></div>
-                    </div>
-                    <div style="font-size: 12px; color: #666; margin-block-start: 10px;">0/2</div>
-                </div>
-
-                <!-- Advancement Bracket (3-1/3-2) -->
-                <div class="bracket-tier">
-                    <div class="tier-header tier-advance">
-                        <span style="color: #ff3333;">●</span> Advance (3-1 / 3-2)
-                    </div>
-                    <div class="bracket-slots">
-                        <div class="pickem-slot"></div>
-                        <div class="pickem-slot"></div>
-                        <div class="pickem-slot"></div>
-                        <div class="pickem-slot"></div>
-                    </div>
-                    <div style="font-size: 12px; color: #666; margin-block-start: 10px;">0/6</div>
-                </div>
-
-                <!-- Losers Bracket (0-3) -->
-                <div class="bracket-tier">
-                    <div class="tier-header tier-loss">
-                        <span style="color: #ff3333;">●</span> 0-3
-                    </div>
-                    <div class="bracket-slots">
-                        <div class="pickem-slot"></div>
-                        <div class="pickem-slot"></div>
-                    </div>
-                    <div style="font-size: 12px; color: #666; margin-block-start: 10px;">0/2</div>
-                </div>
-            </div>
-            <!-- Teams Section -->
-            <div class="teams-section">
-                <div class="section-subtitle">Týmy</div>
-                <div class="team-list"></div>
-            </div>
-
-            <!-- Footer -->
-            <div class="pickem-footer">
-                <button class="save-btn">ULOŽIT PICK'EM</button>
-                <div class="msg"></div>
-            </div>
-
-            <!-- Scoring Rules -->
-            <div class="scoring-section">
-                <div class="scoring-title">Skórování</div>
-                <div class="scoring-rules">
-                    <div class="scoring-item">
-                        Správný tým 3-0: <strong>+5 pts</strong>
-                    </div>
-                    <div class="scoring-item">
-                        Správný postup (3-1/3-2): <strong>+2 pts</strong>
-                    </div>
-                    <div class="scoring-item">
-                        Správný tým 0-3: <strong>+5 pts</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 1">
+      <div class="player-info">
+        <h3>Hráč 1</h3>
+        <p>IGL / Captain</p>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <img src="1.png" alt="BAITTERS" style="inline-size: 25px; block-size: 25px; margin-block-end: 10px;">
-        <p>© 2025 BAITTERS ESPORT</p>
-    </footer>
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 2">
+      <div class="player-info">
+        <h3>Hráč 2</h3>
+        <p>AWPer</p>
+      </div>
+    </div>
 
-    <!-- Script -->
-    <script>
-        const TEAMS = ["GamerLegion", "Sharks Esports", "M80", "FlyQuest", "NRG", "BetBoom Team", "Lynn Vision Gaming", "HEROIC", "B8", "MIBR", "Gaimin Gladiators", "TYLOO", "ThunderDownUnder", "BiG", "Team Liquid", "SINNERS Esports"];
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 3">
+      <div class="player-info">
+        <h3>Hráč 3</h3>
+        <p>Entry Fragger</p>
+      </div>
+    </div>
 
-        document.querySelectorAll(".tournament-btn").forEach(btn => {
-            btn.addEventListener("click", () => openPickem(btn.dataset.open));
-        });
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 4">
+      <div class="player-info">
+        <h3>Hráč 4</h3>
+        <p>Lurker</p>
+      </div>
+    </div>
 
-        function openPickem(id) {
-            const template = document.getElementById("pickem-template");
-            template.classList.add("active");
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 5">
+      <div class="player-info">
+        <h3>Hráč 5</h3>
+        <p>Support</p>
+      </div>
+    </div>
 
-            template.querySelector(".pickem-title").textContent = id.toUpperCase() + " – PICK'EM";
+  </div>
+</section>
 
-            const teamList = template.querySelector(".team-list");
-            teamList.innerHTML = "";
-            TEAMS.forEach(t => {
-                const div = document.createElement("div");
-                div.className = "team-btn";
-                div.draggable = true;
-                div.textContent = t;
-                teamList.appendChild(div);
-            });
+<!-- CS2 ACADEMY -->
+<section class="news-section">
 
-            initPickem(template, id);
-            window.scrollTo({ inset-block-start: template.offsetTop - 20, behavior: "smooth" });
-        }
+  <h2 class="news-title team-title">
+    <span>CS2 ACADEMY</span>
+    <img src="cs2logo.png" alt="CS2 Logo" class="cs2-logo">
+  </h2>
 
-        function initPickem(setop
-            let dragged = null;
+  <div class="team-grid">
 
-            const slots = section.querySelectorAll(".pickem-slot");
-            const pool = section.querySelector(".team-list");
-            const msg = section.querySelector(".msg");
-            const saveBtn = section.querySelector(".save-btn");
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 1">
+      <div class="player-info">
+        <h3>Hráč 1</h3>
+        <p>IGL / Captain</p>
+      </div>
+    </div>
 
-            function attachDrag(btn) {
-                btn.addEventListener("dragstart", () => {
-                    dragged = btn;
-                    btn.classList.add("dragging");
-                });
-                btn.addEventListener("dragend", () => {
-                    btn.classList.remove("dragging");
-                    dragged = null;
-                });
-            }
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 2">
+      <div class="player-info">
+        <h3>Hráč 2</h3>
+        <p>AWPer</p>
+      </div>
+    </div>
 
-            section.querySelectorAll(".team-btn").forEach(attachDrag);
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 3">
+      <div class="player-info">
+        <h3>Hráč 3</h3>
+        <p>Entry Fragger</p>
+      </div>
+    </div>
 
-            slots.forEach(slot => {
-                slot.addEventListener("dragover", e => {
-                    e.preventDefault();
-                    slot.classList.add("drag-over");
-                });
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 4">
+      <div class="player-info">
+        <h3>Hráč 4</h3>
+        <p>Lurker</p>
+      </div>
+    </div>
 
-                slot.addEventListener("dragleave", () => {
-                    slot.classList.remove("drag-over");
-                });
+    <div class="player-card">
+      <img src="2.png" alt="Hráč 5">
+      <div class="player-info">
+        <h3>Hráč 5</h3>
+        <p>Support</p>
+      </div>
+    </div>
 
-                slot.addEventListener("drop", () => {
-                    slot.classList.remove("drag-over");
-                    if (!dragged) return;
+  </div>
+</section>
 
-                    for (let s of slots) {
-                        if (s.textContent.trim() === dragged.textContent.trim()) return;
-                    }
+<!-- FOOTER -->
+<footer class="footer">
 
-                    if (slot.textContent.trim() !== "") {
-                        const old = document.createElement("div");
-                        old.className = "team-btn";
-                        old.draggable = true;
-                        old.textContent = slot.textContent.trim();
-                        pool.appendChild(old);
-                        attachDrag(old);
-                    }
+  <div class="footer-logo">
+    <img src="1.png" alt="BAITTERS Logo">
+  </div>
 
-                    slot.textContent = dragged.textContent.trim();
-                    dragged.remove();
-                });
+  <div class="footer-columns">
 
-                slot.addEventListener("click", () => {
-                    if (slot.textContent.trim() !== "") {
-                        const old = document.createElement("div");
-                        old.className = "team-btn";
-                        old.draggable = true;
-                        old.textContent = slot.textContent.trim();
-                        pool.appendChild(old);
-                        attachDrag(old);
-                        slot.textContent = "";
-                    }
-                });
-            });
+    <div class="footer-col">
+      <h3>MEDIA</h3>
+      <p><a href="https://www.instagram.com/baitters_cs/" target="_blank">Instagram</a></p>
+      <p><a href="#">Partneři</a></p>
+      <p><a href="#">Press Kit</a></p>
+      <p><a href="#">Livestream Kit</a></p>
+    </div>
 
-            saveBtn.onclick = () => {
-                const data = {
-                    slots: Array.from(slots).map(s => s.textContent.trim()),
-                    pool: Array.from(pool.querySelectorAll(".team-btn")).map(b => b.textContent.trim())
-                };
-                localStorage.setItem("pickem-" + key, JSON.stringify(data));
-                msg.textContent = "Pick'em uložen!";
-                setTimeout(() => msg.textContent = "", 2500);
-            };
+    <div class="footer-col">
+      <h3>COMMUNITY</h3>
+      <p><a href="index.html">Home</a></p>
+      <p><a href="onas.html">O nás</a></p>
+      <p><a href="tym.html">Náš tým</a></p>
+      <p><a href="kontakt.html">Kontakt</a></p>
+    </div>
 
-            const saved = localStorage.getItem("pickem-" + key);
-            if (saved) {
-                const data = JSON.parse(saved);
+    <div class="footer-col">
+      <h3>KONTAKT</h3>
+      <p><a href="#">BAITTERS ESPORT</a></p>
+    </div>
 
-                slots.forEach((s, i) => s.textContent = data.slots[i] || "");
-                pool.innerHTML = "";
+  </div>
 
-                data.pool.forEach(name => {
-                    const btn = document.createElement("div");
-                    btn.className = "team-btn";
-                    btn.draggable = true;
-                    btn.textContent = name;
-                    pool.appendChild(btn);
-                    attachDrag(btn);
-                });
-            }
-        }
-    </script>
+  <div class="footer-bottom">
+    <p>Play Responsibly</p>
+    <p>© 2025 BAITTERS ESPORT. Všechna práva vyhrazena.</p>
+  </div>
+
+</footer>
+
 </body>
 </html>
