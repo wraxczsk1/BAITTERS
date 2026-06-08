@@ -634,13 +634,4 @@ body {
   text-transform: uppercase;
 }
 
-.save-btn:hover {
-  background: var(--red-soft);
-}
 
-.msg {
-  text-align: center;
-  margin-top: 8px;
-  color: var(--text-muted);
-  font-size: 13px;
-}
