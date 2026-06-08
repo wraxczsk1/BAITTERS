@@ -1,80 +1,646 @@
-/* BUTTON */
-.turnaj-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ZÁKLAD */
+:root {
+  --red: #ff2740;
+  --red-soft: #ff4b5f;
+  --bg-main: #050509;
+  --bg-elevated: #0d0f18;
+  --bg-card: #141724;
+  --text-main: #f5f5f7;
+  --text-muted: #a5a7b5;
+  --border-soft: #26293a;
+  --glow-red: 0 0 22px rgba(255, 39, 64, 0.8);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #1a0b12 0%, #050509 45%, #000000 100%);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* HLAVIČKA */
+.top-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 7vw;
+  background: rgba(5, 5, 12, 0.96);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  opacity: 0.95;
+}
+
+.header-name {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.header-name:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
+/* NAVIGACE */
+.nav {
+  background: rgba(6, 7, 14, 0.98);
+  display: flex;
+  padding: 12px 7vw;
+  gap: 28px;
+  border-bottom: 1px solid var(--border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+  letter-spacing: 0.16em;
+  transition: 0.2s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--red);
+  transition: 0.25s;
+}
+
+.nav a:hover {
+  color: var(--text-main);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  padding: 120px 7vw 80px 7vw;
   text-align: center;
+  background: linear-gradient(135deg, #120812 0%, #050509 55%, #050509 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255, 39, 64, 0.22) 0, transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(255, 39, 64, 0.18) 0, transparent 55%);
+  opacity: 0.9;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 7vw, 82px);
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  margin-top: 18px;
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+/* TLAČÍTKA */
+.btn-red {
+  background: var(--red);
+  padding: 12px 26px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  box-shadow: var(--glow-red);
+  transition: 0.22s;
+}
+
+.btn-red:hover {
+  background: #ff4b5f;
+}
+
+.btn-outline {
+  border: 1px solid var(--border-soft);
+  padding: 12px 26px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(10, 10, 18, 0.8);
+  transition: 0.22s;
+}
+
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+  background: rgba(10, 10, 18, 1);
+}
+
+/* NOVINY */
+.news-section {
+  padding: 70px 7vw 80px 7vw;
+  background: radial-gradient(circle at top, #161222 0%, #050509 55%);
+}
+
+.news-title {
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.news-title span {
+  color: var(--red);
+}
+
+.news-box {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.news-item {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 22px 24px;
+  border: 1px solid var(--border-soft);
+  margin-bottom: 18px;
+  transition: 0.22s;
+}
+
+.news-item:hover {
+  border-color: var(--red);
+}
+
+.news-item h3 {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.news-item p {
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+/* TÝM */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 26px;
+}
+
+.player-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  transition: 0.25s;
+  position: relative;
+}
+
+.player-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 40%);
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.player-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.player-info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 14px 16px;
+  width: 100%;
+  z-index: 2;
+  transform: translateY(100%);
+  transition: 0.25s;
+}
+
+.player-info h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.player-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.player-card:hover {
+  border-color: var(--red);
+}
+
+.player-card:hover::before {
+  opacity: 1;
+}
+
+.player-card:hover .player-info {
+  transform: translateY(0);
+}
+
+/* O NÁS */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.about-box {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 22px 24px;
+  border: 1px solid var(--border-soft);
+  transition: 0.22s;
+}
+
+.about-box:hover {
+  border-color: var(--red);
+}
+
+.about-box h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 10px;
+  color: var(--red);
+}
+
+.about-box p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* KONTAKT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 36px;
+}
+
+.contact-info {
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.contact-info p + p {
+  margin-top: 8px;
+}
+
+.contact-info strong {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+}
+
+.contact-info a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-box {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  padding: 20px 22px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* FOOTER */
+.footer {
+  background: #000;
+  padding: 60px 7vw;
+  margin-top: 60px;
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 70px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.footer-col {
+  text-align: left;
+  min-width: 150px;
+}
+
+.footer-col h3 {
+  color: var(--red);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  margin: 6px 0;
+}
+
+.footer-col p a,
+.footer-bottom a {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 39, 64, 0.12);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  color: var(--text-main);
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-col p a:hover,
+.footer-bottom a:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  margin-top: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* TURNOVÉ BANNERY */
+.tournaments-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 18px;
 }
 
-.turnaj-btn img {
-  width: 240px;
-  border-radius: 14px;
-  transition: 0.25s;
+.tournament-banner {
+  background: var(--bg-card);
   border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.25s;
 }
 
-.turnaj-btn:hover img {
-  transform: scale(1.05);
+.tournament-banner:hover {
   border-color: var(--red);
   box-shadow: var(--glow-red);
 }
 
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(6px);
-  z-index: 999;
-  animation: fadeIn 0.25s ease-out;
+.tournament-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-.modal-content {
-  background: var(--bg-card);
-  border: 1px solid var(--red);
-  border-radius: 14px;
-  width: min(500px, 90%);
-  margin: 10% auto;
-  padding: 26px;
-  box-shadow: var(--glow-red);
-  animation: popIn 0.25s ease-out;
-}
-
-.modal-content h3 {
+.tournament-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: #151824;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
   color: var(--red);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  margin-bottom: 10px;
 }
 
-.modal-content p {
+.tournament-text h3 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tournament-text p {
+  margin: 2px 0 0;
+  font-size: 13px;
   color: var(--text-muted);
+}
+
+.tournament-btn {
+  background: var(--red);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: 0.2s;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.tournament-btn:hover:not([disabled]) {
+  background: var(--red-soft);
+}
+
+.tournament-btn[disabled] {
+  background: #333;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* PICK'EM SEKCE */
+#pickem-section {
+  max-width: 900px;
+  margin: 30px auto 60px;
+  display: none;
+}
+
+.pickem-title {
+  text-align: center;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* PICK'EM TABULKA */
+.pickem-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pickem-table th {
+  background: #0d0f18;
+  padding: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.pickem-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-main);
   font-size: 15px;
 }
 
-.close {
-  float: right;
-  font-size: 28px;
-  cursor: pointer;
-  color: var(--text-main);
+/* DRAG‑AND‑DROP SLOTY */
+.pickem-slot {
+  min-height: 42px;
+  border: 1px dashed var(--border-soft);
+  border-radius: 8px;
+  padding: 8px;
   transition: 0.2s;
 }
 
-.close:hover {
+.pickem-slot.drag-over {
+  border-color: var(--red);
+  background: rgba(255, 39, 64, 0.12);
+}
+
+/* TÝMOVÉ TLAČÍTKA */
+.team-list {
+  max-width: 900px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.team-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: grab;
+  transition: 0.2s;
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.team-btn:hover {
+  border-color: var(--red);
   color: var(--red);
 }
 
-/* ANIMACE */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.team-btn.dragging {
+  opacity: 0.4;
 }
 
-@keyframes popIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+/* ULOŽIT PICK'EM */
+.save-btn {
+  display: block;
+  margin: 24px auto 0;
+  padding: 10px 26px;
+  background: var(--red);
+  border: none;
+  border-radius: 999px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.save-btn:hover {
+  background: var(--red-soft);
+}
+
+.msg {
+  text-align: center;
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
 }
