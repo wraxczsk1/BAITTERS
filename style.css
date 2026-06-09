@@ -349,12 +349,35 @@ body {
 }
 
 /* ----------------------------- */
-/* FOOTER */
+/* FOOTER — OPRAVENÝ A ZAROVNANÝ */
 /* ----------------------------- */
+
+:root {
+    --footer-logo-size: 55px;   /* změň číslo a logo se zvětší/zmenší */
+}
+
+.footer {
+    background: #1a1a1a;
+    border-top: 2px solid #330000;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer-logo img {
+    width: var(--footer-logo-size);
+    height: var(--footer-logo-size);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.05);
+}
 
 .footer-columns {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 0 auto 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
@@ -381,6 +404,16 @@ body {
 .footer-col a:hover {
     color: #ff3333;
     padding-left: 5px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 /* ----------------------------- */
