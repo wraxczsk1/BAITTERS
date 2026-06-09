@@ -349,11 +349,11 @@ body {
 }
 
 /* ----------------------------- */
-/* FOOTER — OPRAVENÝ A ZAROVNANÝ */
+/* FOOTER – OPRAVENÝ A ZAROVNANÝ */
 /* ----------------------------- */
 
 :root {
-    --footer-logo-size: 55px;   /* změň číslo a logo se zvětší/zmenší */
+    --footer-logo-size: 70px;   /* ZMĚŇ ČÍSLO A LOGO SE ZVĚTŠÍ/ZMENŠÍ */
 }
 
 .footer {
@@ -367,8 +367,10 @@ body {
 .footer-logo img {
     width: var(--footer-logo-size);
     height: var(--footer-logo-size);
-    margin-bottom: 20px;
-    transition: 0.3s;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 30px;   /* logo nad sloupci */
+    transition: 0.25s ease;
 }
 
 .footer-logo img:hover {
@@ -415,6 +417,7 @@ body {
     font-size: 14px;
     margin-bottom: 5px;
 }
+
 
 /* ----------------------------- */
 /* TÝMOVÁ GRID */
