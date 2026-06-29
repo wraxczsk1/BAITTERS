@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAITTERS ESPORTS — Náš tým</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HLAVIČKA -->
+<header class="top-header">
+  <div class="logo-box">
+    <img src="logo.png" alt="BAITTERS Logo">
+  </div>
+  <div class="title-box">
+    <h1>BAITTERS</h1>
+    <p>CZ / SK Esport Organizace</p>
+  </div>
+</header>
+
+<!-- NAVIGACE -->
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="onas.html">O nás</a>
+  <a href="tym.html" class="active">Náš tým</a>
+  <a href="zapasy.html">Zápasy</a>
+  <a href="partneri.html">Partneři</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<!-- SEKCE NÁŠ TÝM -->
+<section class="main-content">
+  <h2>Náš tým</h2>
+
+  <!-- PŘEPÍNAČ -->
+  <div class="team-tabs">
+    <button class="team-tab active" onclick="switchTeam('maine', this)">
+      <span class="tab-dot dot-maine"></span>
+      Maine
+    </button>
+    <button class="team-tab" onclick="switchTeam('academy', this)">
+      <span class="tab-dot dot-academy"></span>
+      Academy
+    </button>
+  </div>
+
+  <!-- ===== MAINE TÝM ===== -->
+  <div id="team-maine" class="team-roster">
+    <div class="team-roster-header">
+      <span class="roster-badge badge-maine">MAINE</span>
+      <p class="roster-desc">Hlavní sestava BAITTERS — Counter-Strike 2</p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="player-card">
+        <div class="player-card-header">
+          <span class="player-role role-igl">IGL</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Hráč 1" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">01</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">HRÁČ 1</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card">
+        <div class="player-card-header">
+          <span class="player-role role-awp">AWP</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Hráč 2" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">02</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">HRÁČ 2</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card">
+        <div class="player-card-header">
+          <span class="player-role role-entry">ENTRY</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Hráč 3" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">03</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">HRÁČ 3</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card">
+        <div class="player-card-header">
+          <span class="player-role role-lurker">LURKER</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Hráč 4" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">04</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">HRÁČ 4</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card">
+        <div class="player-card-header">
+          <span class="player-role role-support">SUPPORT</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Hráč 5" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">05</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">HRÁČ 5</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== ACADEMY TÝM ===== -->
+  <div id="team-academy" class="team-roster" style="display:none;">
+    <div class="team-roster-header">
+      <span class="roster-badge badge-academy">ACADEMY</span>
+      <p class="roster-desc">Juniorská akademická sestava BAITTERS — Counter-Strike 2</p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="player-card academy">
+        <div class="player-card-header">
+          <span class="player-role role-igl">IGL</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Akademik 1" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">A1</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">AKADEMIK 1</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider divider-academy"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card academy">
+        <div class="player-card-header">
+          <span class="player-role role-awp">AWP</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Akademik 2" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">A2</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">AKADEMIK 2</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider divider-academy"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card academy">
+        <div class="player-card-header">
+          <span class="player-role role-entry">ENTRY</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Akademik 3" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">A3</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">AKADEMIK 3</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider divider-academy"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card academy">
+        <div class="player-card-header">
+          <span class="player-role role-lurker">LURKER</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Akademik 4" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">A4</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">AKADEMIK 4</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider divider-academy"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player-card academy">
+        <div class="player-card-header">
+          <span class="player-role role-support">SUPPORT</span>
+        </div>
+        <div class="player-avatar">
+          <img src="black.png" alt="Akademik 5" onerror="this.style.display='none'">
+          <div class="avatar-placeholder">A5</div>
+        </div>
+        <div class="player-card-body">
+          <h3 class="player-nick">AKADEMIK 5</h3>
+          <p class="player-real">Jméno Příjmení</p>
+          <div class="player-divider divider-academy"></div>
+          <div class="player-stats">
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">Rating</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">K/D</span></div>
+            <div class="pstat"><span class="pstat-val">—</span><span class="pstat-lbl">HS%</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand"><span>BAIT</span>TERS</div>
+  <p>&copy; 2025 BAITTERS. Všechna práva vyhrazena.</p>
+  <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
+</footer>
+
+<script>
+  function switchTeam(team, btn) {
+    document.querySelectorAll('.team-roster').forEach(r => r.style.display = 'none');
+    document.querySelectorAll('.team-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('team-' + team).style.display = 'block';
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

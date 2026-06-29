@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+.vs/
+*.swp
+*.swo
+*.user
+
+# .NET build output
+bin/
+obj/
+out/
+
+# Logs
+*.log
+Výstup-Sestavení.txt
+
+# Node (pokud budeš používat)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ASP.NET specifics
+appsettings.Development.json
