@@ -415,6 +415,147 @@ body {
 .content-box a { color: var(--red); text-decoration: none; }
 .content-box a:hover { text-decoration: underline; }
 
+/* ---- ABOUT PAGE ---- */
+.about-page {
+  max-width: 1180px;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 28px;
+}
+
+.about-copy {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 42px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(224,32,32,0.18), transparent 44%),
+    rgba(255,255,255,0.04);
+}
+
+.about-copy::after {
+  content: 'BAITTERS';
+  position: absolute;
+  right: -8px;
+  bottom: -32px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 112px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.035);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.about-kicker {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--red);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.about-copy h2 {
+  margin-bottom: 18px;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.about-copy p {
+  position: relative;
+  max-width: 660px;
+  color: #b8b8d0;
+  font-size: 17px;
+  z-index: 1;
+}
+
+.about-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.about-panel div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 88px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: 10px;
+  background: var(--bg-card);
+}
+
+.about-panel strong {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--white);
+}
+
+.about-panel span {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.about-card {
+  position: relative;
+  min-height: 190px;
+  margin-bottom: 0;
+  padding: 30px;
+  overflow: hidden;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+}
+
+.about-card:hover {
+  border-color: var(--border-red);
+  background: var(--bg-card-hv);
+  transform: translateY(-3px);
+}
+
+.about-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.05);
+  line-height: 1;
+}
+
+.about-card h3 {
+  margin-bottom: 14px;
+  color: var(--white);
+  font-size: 22px;
+}
+
+.about-card p {
+  max-width: 520px;
+  color: #9b9bbb;
+  line-height: 1.7;
+}
+
 /* ---- GALLERY ---- */
 .gallery-grid {
   display: grid;
@@ -611,6 +752,10 @@ body {
 @media (max-width: 900px) {
   .main-content-layout { grid-template-columns: 1fr; padding: 0 24px; }
   .main-content { padding: 32px 24px; }
+  .about-hero { grid-template-columns: 1fr; }
+  .about-copy { min-height: auto; padding: 32px; }
+  .about-copy h2 { font-size: 46px; }
+  .about-grid { grid-template-columns: 1fr; }
   .team-section { padding: 32px 24px; }
   .top-header { padding: 14px 24px; }
   .nav { padding: 0 12px; gap: 0; overflow-x: auto; }
@@ -625,6 +770,12 @@ body {
   .title-box h1 { font-size: 28px; }
   .hero-content h2 { font-size: 36px; }
   .hero-buttons { flex-direction: column; align-items: center; }
+  .about-copy { padding: 28px 22px; }
+  .about-copy::after { font-size: 64px; right: -18px; bottom: -18px; }
+  .about-copy h2 { font-size: 38px; }
+  .about-copy p { font-size: 15px; }
+  .about-panel strong { font-size: 28px; }
+  .about-card { min-height: auto; padding: 26px 22px; }
   .nav a { font-size: 12px; padding: 12px 10px; }
   .footer { flex-direction: column; text-align: center; }
 }
