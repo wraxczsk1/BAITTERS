@@ -476,8 +476,9 @@ body {
 .about-copy p {
   position: relative;
   max-width: 660px;
-  color: #b8b8d0;
+  color: #d5d5e8;
   font-size: 17px;
+  font-weight: 500;
   z-index: 1;
 }
 
@@ -554,7 +555,8 @@ body {
 
 .about-card p {
   max-width: 520px;
-  color: #9b9bbb;
+  color: #b0b0d0;
+  font-weight: 500;
   line-height: 1.7;
 }
 
