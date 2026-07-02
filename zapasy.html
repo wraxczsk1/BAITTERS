@@ -59,6 +59,15 @@
   <!-- POSLEDNÍ ZÁPASY -->
   <div class="card">
     <p class="section-title">Poslední zápasy</p>
+
+    <!-- FILTR TURNAJŮ -->
+    <div class="team-tabs" style="margin-bottom: 24px; flex-wrap: wrap;">
+      <button class="team-tab active" onclick="filterMatches('all', this)">Vše</button>
+      <button class="team-tab" onclick="filterMatches('playzone', this)">Playzone</button>
+      <button class="team-tab" onclick="filterMatches('mcb', this)">MČB</button>
+      <button class="team-tab" onclick="filterMatches('friendly', this)">Friendly Match</button>
+    </div>
+
     <table class="matches-table">
       <thead>
         <tr>
@@ -70,35 +79,35 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr data-tournament="mcb">
           <td>21.06.2025</td>
           <td>ex-Vantex vs BAITTERS</td>
           <td style="color: var(--text-muted); font-size:13px;">-</td>
           <td><span class="score-loss">0 : 3</span></td>
           <td><span class="match-badge loss">Prohra</span></td>
         </tr>
-        <tr>
+        <tr data-tournament="mcb">
           <td>05.06.2025</td>
           <td>BAITTERS vs Team Eclipse</td>
           <td style="color: var(--text-muted); font-size:13px;">-</td>
           <td><span style="color: var(--text-muted);">1 : 1</span></td>
           <td><span class="match-badge">Remíza</span></td>
         </tr>
-        <tr>
+        <tr data-tournament="mcb">
           <td>29.05.2025</td>
           <td>BAITTERS vs Team Eclipse</td>
           <td style="color: var(--text-muted); font-size:13px;">-</td>
           <td><span class="score-win">13 : 11</span></td>
           <td><span class="match-badge win">Výhra</span></td>
         </tr>
-        <tr>
+        <tr data-tournament="mcb">
           <td>21.05.2025</td>
           <td>BAITTERS vs Purple Phoenix</td>
           <td style="color: var(--text-muted); font-size:13px;">-</td>
           <td><span class="score-win">13 : 2</span></td>
           <td><span class="match-badge win">Výhra</span></td>
         </tr>
-        <tr>
+        <tr data-tournament="mcb">
           <td>19.05.2025</td>
           <td>BAITTERS vs Ironix</td>
           <td style="color: var(--text-muted); font-size:13px;">-</td>
@@ -107,6 +116,10 @@
         </tr>
       </tbody>
     </table>
+
+    <p id="no-matches-msg" style="display:none; color: var(--text-muted); font-size: 14px; margin-top: 16px;">
+      Zatím žádné zápasy v této kategorii.
+    </p>
   </div>
 </section>
 <!-- FOOTER -->
@@ -115,5 +128,24 @@
   <p>&copy; 2025 BAITTERS. Všechna práva vyhrazena.</p>
   <p>Kontakt: <a href="mailto:info@baitters.cz">info@baitters.cz</a></p>
 </footer>
+
+<script>
+  function filterMatches(tournament, btn) {
+    document.querySelectorAll('.team-tabs .team-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+
+    const rows = document.querySelectorAll('.matches-table tbody tr');
+    let visibleCount = 0;
+
+    rows.forEach(row => {
+      const matches = tournament === 'all' || row.dataset.tournament === tournament;
+      row.style.display = matches ? '' : 'none';
+      if (matches) visibleCount++;
+    });
+
+    document.getElementById('no-matches-msg').style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+</script>
+
 </body>
 </html>
